@@ -1,0 +1,47 @@
+baseurl             = "/"
+languageCode        = "en-us"
+title               = "Belamov"
+theme               = "introduction"
+builddrafts         = false
+canonifyurls        = true
+contentdir          = "content"
+layoutdir           = "layouts"
+publishdir          = "public"
+# disqusshortname   = "xxx" # Enable Disqus for comments
+# googleAnalytics   = "xxx"
+
+[permalinks]
+fixed = ":title/"
+blog  = "blog/:slug/"
+
+[params]
+introheight   = "fullheight"
+author        = "Dmitry Belamov" # Full name shows on blog post pages
+firstname     = "Dmitry" # First name shows in introduction on main page
+tagline       = "web developer" # Appears after the introduction
+avatar        = "img/ava.jpg" # Path to image in static folder eg. img/avatar.png
+email         = "belamov44@gmail.com" # Shows in contact section, or leave blank to omit
+dateform      = "Jan 2, 2006"
+dateformfull  = "Mon Jan 2 2006 15:04:05 EST"
+cachebuster   = true # Add the current unix timestamp in query string for cache busting css assets
+description   = "Dmitry Belamov's personal site"
+faviconfile   = "img/fav.ico"
+highlightjs   = true # Syntax highlighting
+lang          = "en"
+footertext    = "" # Text to show in footer (overrides default text)
+
+# Social icons appear in introduction and contact section. Input your username only, eg "you" as it appears in "twitter.com/you"
+linkedin      = ""
+twitter       = "adr0it4"
+github        = "belamov"
+vk            = "deft4"
+pinterest     = ""
+facebook      = ""
+googleplus    = ""
+
+showblog        = false # Show Blog section on home page
+showallposts    = false # Set 'true' to list all posts on home page, or set 'false' to link to separate blog list page
+showlatest      = false # Show latest blog post summary
+sharebuttons    = false # On post pages, show share this social buttons
+
+showprojects    = false # Show Projects section on home page
