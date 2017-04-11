@@ -6577,7 +6577,7 @@ a.panel-block:hover, label.panel-block:hover {
 
 .footer {
     background-color: #f5f5f5;
-    padding: 3rem 1.5rem 6rem
+    padding: 3rem 1.5rem 3rem
 }
 
 @-webkit-keyframes fadeIn {
@@ -6871,4 +6871,14 @@ ul {
 
 .nav-menu .is-active {
     z-index: 100;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.wrapper{
+    flex: 1;
 }

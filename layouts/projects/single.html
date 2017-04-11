@@ -1,55 +1,39 @@
 {{ partial "header.html" . }}
-
-<div class="section" id="top"><!-- Parent section -->
-
-    <div class="container hero fade-in one"><!-- Begin Title -->
-        <h1 class="bold-title is-1">Projects</h1>
-    </div><!-- End Title -->
-</div>
-<div class="section fade-in two">
-    <div class="container"><!-- Begin Nav bar -->
-        {{ partial "nav-list.html" . }}
+<div class="wrapper">
+    <div class="section" id="top">
+        <div class="container hero fade-in one">
+            <h1 class="bold-title is-1">Projects</h1>
+        </div>
     </div>
-
-
-<div class="container fade-in two">
-    <h1 class="title is-1 strong-post-title">{{ .Title }}</h1>
-    <div class="columns">
-        {{if .Params.link}}
-        <a href="{{ .Params.link }}" style="display: block;" target="_blank" class="column is-2">Link</a>
-        {{end}}
-        {{if .Params.source}}
-            <a href="{{ .Params.source }}" style="display: block;" target="_blank" class="column is-2">Source code</a>
-        {{end}}
-    </div>
-    <div class="columns fade-in two "><!-- Begin blog post content -->
-        <div class="column markdown is-three-quarters">{{ .Content }}</div>
-        <div class="colums is-one-quarter"><img src="{{ .Params.imagelink }}" alt="project preview" class="image"></div>
+    <div class="section fade-in two">
+        <div class="container">
+            {{ partial "nav-list.html" . }}
+        </div>
+        <div class="container fade-in two">
+            <h1 class="title is-1 strong-post-title">{{ .Title }}</h1>
+            <div class="columns">
+                {{if .Params.link}}
+                    <a href="{{ .Params.link }}" style="display: block;" target="_blank" class="column is-2">Link</a>
+                {{end}}
+                {{if .Params.source}}
+                    <a href="{{ .Params.source }}" style="display: block;" target="_blank" class="column is-2">Source code</a>
+                {{end}}
+            </div>
+            <div class="columns ">
+                <div class="column markdown is-three-quarters">
+                    {{ .Content }}
+                </div>
+                <div class="colums is-one-quarter">
+                    <img src="{{ .Params.imagelink }}" alt="project preview" class="image">
+                </div>
+            </div>
+        </div>
+        <div class="container has-text-centered top-pad">
+            <hr>
+            <a href="#top">TOP</a>
+            <hr>
+        </div>
     </div>
 </div>
-
-<div class="container has-text-centered top-pad">
-    <hr>
-    <a href="{{ .Permalink }}#top">TOP</a>
-    <hr>
-</div>
-
 {{ partial "footer.html" . }}
-</div>
-<!-- Cool scroll effect from this guy: https://gist.github.com/flesler/ -->
-<!-- Include jQuery from somewhere, must use version 1.8 or above -->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<!-- Include latest jquery.scrollTo, can download from https://github.com/flesler/jquery.scrollTo/releases -->
-<script type="application/javascript" src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
-<!-- Initialize the plugin, the contents of the script can be inlined here, of course -->
-<script type="text/javascript" src={{ "js/init.js" | relURL }}></script>
-<script>
-// Bind to the click of all links with a #hash in the href
-$('a[href^="{{ .Permalink }}#"]').click(function(e) {
-    // Prevent the jump and the #hash from appearing on the address bar
-    e.preventDefault();
-    // Scroll the window, stop any previous animation, stop on user manual scroll
-    // Check https://github.com/flesler/jquery.scrollTo for more customizability
-    $(window).stop(true).scrollTo(this.hash, {duration:500, interrupt:false});
-});
-</script>
+{{ partial "scripts.html" }}

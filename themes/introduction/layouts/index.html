@@ -5,149 +5,107 @@
 
     Enjoy, and I hope you find what you're looking for! If you have questions or want to get in touch, please do: hello@vickylai.com.
 -->
-
 {{ partial "header.html" . }}
-
-<div class="section no-padding" id="top"> <!-- Where all the awesome begins -->
-
-    <div class="hero is-{{ .Site.Params.introheight }}">
-        <!-- Possible hero-head not used -->
-        <!-- Super sweet Hero body title -->
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <!-- Title and tagline -->
-                <h1 class="bold-title fade-in one">Hi, I'm {{ .Site.Params.firstname }}.</h1>
-                <h3 class="subtitle is-3 fade-in two">{{ .Site.Params.tagline }}</h3>
-                <!-- End title and tagline -->
-                <!-- Some social icons -->
-                <div class="fade-in three">{{ partial "social.html" . }}</div>
-                <!-- End top social icons -->
+<div class="wrapper">
+    <div class="section no-padding" id="top">
+        <div class="hero is-{{ .Site.Params.introheight }}">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="bold-title fade-in one">Hi, I'm {{ .Site.Params.firstname }}.</h1>
+                    <h3 class="subtitle is-3 fade-in two">{{ .Site.Params.tagline }}</h3>
+                    <div class="fade-in three">{{ partial "social.html" . }}</div>
+                </div>
             </div>
-        </div> <!-- Hero body title end -->
-        <!-- Hero foot has nav bar -->
-        <div class="hero-foot fade-in three container">
-            <hr>
+            <div class="hero-foot fade-in three container">
+                <hr>
+                <div class="container">
+                    <div class="columns is-fullwidth has-text-centered">
+                        <div class="column nav-item">
+                            <a href="#about">About</a>
+                        </div>
+                        <div class="column nav-item">
+                            <a href="/projects">Projects</a>
+                        </div>
+                        <div class="column nav-item">
+                            <a href="/blog">Blog</a>
+                        </div>
+                        <div class="column nav-item">
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="section no-padding fade-in three">
+        <div class="section" id="about">
             <div class="container">
-                <div class="columns is-fullwidth has-text-centered">
-                    <div class="column nav-item">
-                        <a href="#about">About</a>
+                <h2 class="title is-2 has-text-centered">About</h2>
+                <div class="columns">
+                    <div class="column is-one-third has-text-centered"><img class="img-responsive avatar"
+                                                                            src="/{{ .Site.Params.avatar }}"
+                                                                            alt="My profile picture.">
                     </div>
-                    <div class="column nav-item">
-                        <a href="/projects">Projects</a>
-                    </div>
-                    <div class="column nav-item">
-                        <a href="/blog">Blog</a>
-                    </div>
-                    <div class="column nav-item">
-                        <a href="#contact">Contact</a>
+                    <div class="column markdown">
+                        {{ range .Data.Pages }}
+                            {{if eq .Title "about" }}
+                                {{.Content}}
+                            {{end}}
+                        {{ end }}
                     </div>
                 </div>
             </div>
-            <hr>
-        </div><!-- Done with nav bar -->
-    </div><!-- Done with Hero -->
-</div><!-- End of top section -->
-
-<!-- Everything below fades in three! -->
-<div class="section no-padding fade-in three">
-
-    <!-- Tell them all about it! -->
-    <div class="section" id="about">
+            <div class="container has-text-centered top-pad">
+                <a href="#top"><i class="fa fa-arrow-up"></i></a>
+            </div>
+        </div>
         <div class="container">
-            <h2 class="title is-2 has-text-centered">About</h2>
-
-            <div class="columns"><!-- Avatar and about.md side by side except mobile -->
-                <div class="column is-one-third has-text-centered"><img class="img-responsive avatar"
-                                                                        src="/{{ .Site.Params.avatar }}"
-                                                                        alt="My profile picture.">
-                </div>
-                <div class="column markdown">
+            <hr>
+        </div>
+        {{ if .Site.Params.showprojects }}
+            <div class="section" id="projects">
+                {{ partial "projects.html" . }}
+            </div>
+            <div class="container">
+                <hr>
+            </div>
+        {{ end }}
+        {{ if .Site.Params.showblog }}
+            <div class="section" id="blog">
+                {{ partial "blogsection.html" . }}
+            </div>
+            <div class="container">
+                <hr>
+            </div>
+        {{ end }}
+        <div class="section" id="contact">
+            <div class="container has-text-centered">
+                <h2 class="title is-2">Contact</h2>
+                <div class="markdown">
                     {{ range .Data.Pages }}
-                    {{if eq .Title "about" }}
-                    {{.Content}}
-                    {{end}}
+                        {{if eq .Title "contact" }}
+                            {{.Content}}
+                        {{end}}
                     {{ end }}
                 </div>
-            </div>
-        </div><!-- End About container-->
-
-        <div class="container has-text-centered top-pad"><a href="#top"><i class="fa fa-arrow-up"></i></a></div>
-    </div><!-- End About section -->
-
-    <div class="container">
-        <hr>
-    </div>
-
-
-    <!-- Now for some cool projects -->
-    {{ if .Site.Params.showprojects }}
-    <div class="section" id="projects">
-        {{ partial "projects.html" . }}
-    </div><!-- End Projects section -->
-
-    <div class="container">
-        <hr>
-    </div>
-    {{ end }}
-
-
-    <!-- Let's show some blog posts -->
-    {{ if .Site.Params.showblog }}
-    <div class="section" id="blog">
-        {{ partial "blogsection.html" . }}
-    </div><!-- End Blog section -->
-
-    <div class="container">
-        <hr>
-    </div>
-    {{ end }}
-
-    <!-- Let's chat, shall we? -->
-    <div class="section" id="contact">
-        <div class="container has-text-centered">
-            <h2 class="title is-2">Contact</h2>
-            <div class="markdown">
-                {{ range .Data.Pages }}
-                {{if eq .Title "contact" }}
-                {{.Content}}
-                {{end}}
+                {{ if .Site.Params.email }}
+                    <h3 class="subtitle is-3 has-text-centered top-pad">
+                        <a href="mailto:{{ .Site.Params.email }}">
+                            {{ .Site.Params.email }}
+                        </a>
+                    </h3>
                 {{ end }}
+                {{ partial "social.html" . }}
             </div>
-
-            {{ if .Site.Params.email }}
-            <h3 class="subtitle is-3 has-text-centered top-pad"><a href="mailto:{{ .Site.Params.email }}">
-                {{ .Site.Params.email }}</a></h3>
-            {{ end }}
-
-            {{ partial "social.html" . }}
-        </div><!-- End Contact container -->
-
-        <div class="container has-text-centered top-pad"><a href="#top"><i class="fa fa-arrow-up"></i></a></div>
-    </div><!-- End Contact section -->
-
-    <div class="container">
-        <hr>
+            <div class="container has-text-centered top-pad">
+                <a href="#top"><i class="fa fa-arrow-up"></i></a>
+            </div>
+        </div>
+        <div class="container">
+            <hr>
+        </div>
     </div>
-
-
-    <!-- Nice clean finish -->
-    {{ partial "footer.html" . }}
-    <!-- Footer done! -->
-</div><!-- End of fade in three section -->
-<!-- Where all the awesome ends. Aww. -->
-
-<!-- Cool scroll effect from this guy: https://gist.github.com/flesler/ -->
-<!-- Include jQuery from somewhere, must use version 1.8 or above -->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<!-- Include latest jquery.scrollTo, can download from https://github.com/flesler/jquery.scrollTo/releases -->
-<script type="application/javascript" src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
-<script>
-// Bind to the click of all links with a #hash in the href
-$('a[href^="#"]').click(function (e) {
-    // Prevent the jump and the #hash from appearing on the address bar
-    e.preventDefault();
-    // Scroll the window, stop any previous animation, stop on user manual scroll
-    // Check https://github.com/flesler/jquery.scrollTo for more customizability
-    $(window).stop(true).scrollTo(this.hash, {duration: 500, interrupt: false});
-});
-</script>
+</div>
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" }}
