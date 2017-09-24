@@ -30,7 +30,7 @@
                             <a href="/blog">Blog</a>
                         </div>
                         <div class="column nav-item">
-                            <a href="#contact">Contact</a>
+                            <a href="#contacts">Contacts</a>
                         </div>
                     </div>
                 </div>
@@ -56,9 +56,6 @@
                     </div>
                 </div>
             </div>
-            <div class="container has-text-centered top-pad">
-                <a href="#top"><i class="fa fa-arrow-up"></i></a>
-            </div>
         </div>
         <div class="container">
             <hr>
@@ -79,16 +76,9 @@
                 <hr>
             </div>
         {{ end }}
-        <div class="section" id="contact">
+        <div class="section" id="contacts">
             <div class="container has-text-centered">
-                <h2 class="title is-2">Contact</h2>
-                <div class="markdown">
-                    {{ range .Data.Pages }}
-                        {{if eq .Title "contact" }}
-                            {{.Content}}
-                        {{end}}
-                    {{ end }}
-                </div>
+                <h2 class="title is-2">Contacts</h2>
                 {{ if .Site.Params.email }}
                     <h3 class="subtitle is-3 has-text-centered top-pad">
                         <a href="mailto:{{ .Site.Params.email }}">
@@ -97,9 +87,6 @@
                     </h3>
                 {{ end }}
                 {{ partial "social.html" . }}
-            </div>
-            <div class="container has-text-centered top-pad">
-                <a href="#top"><i class="fa fa-arrow-up"></i></a>
             </div>
         </div>
         <div class="container">

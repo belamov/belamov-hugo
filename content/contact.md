@@ -6,6 +6,3 @@ title = "contact"
 +++
 
 Best way to contact me is via [email](mailto:belamov44@gmail.com)
-
-Also you can easily reach me on vk.com
-                                             
