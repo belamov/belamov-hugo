@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-09-24T16:40:10+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/my-thoughts-on-multiple-monitors/</loc>
+    <lastmod>2017-09-24T16:40:10+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/imkurs/</loc>
+    <lastmod>2017-09-24T16:22:55+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/how-i-am-blogging-with-hugo/</loc>
+    <lastmod>2017-04-11T17:38:52+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/welcome-post/</loc>
+    <lastmod>2017-04-10T20:32:57+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/this-site/</loc>
+    <lastmod>2017-04-10T18:06:34+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/recipe-book/</loc>
+    <lastmod>2017-04-10T13:16:34+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/personal-site/</loc>
+    <lastmod>2017-04-09T10:25:16+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contact/</loc>
+    <lastmod>2017-03-09T13:23:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2017-03-09T13:19:25+08:00</lastmod>
+  </url>
+  
+</urlset>

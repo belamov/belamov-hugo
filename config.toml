@@ -6,7 +6,7 @@ builddrafts         = false
 canonifyurls        = true
 contentdir          = "content"
 layoutdir           = "layouts"
-publishdir          = "public"
+publishdir          = "docs"
 googleAnalytics     = "UA-97199672-1"
 disableRSS          = true
 

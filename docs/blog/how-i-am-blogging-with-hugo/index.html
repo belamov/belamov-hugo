@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    
+        <meta name="description" content="Dmitry Belamov&#39;s personal site">
+    
+    <base href="/">
+    <title>
+        
+        
+            Belamov | How I am blogging with Hugo
+        
+    </title>
+    <link rel="canonical" href="/blog/how-i-am-blogging-with-hugo/">
+    
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
+    
+        
+        <link rel="stylesheet" href="/css/style.css?t=1506264435">
+        
+    
+    <link rel="shortcut icon"
+    
+        href="/img/fav.ico"
+    
+    >
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-97199672-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    
+    
+</head>
+<body lang="en">
+  
+<div class="wrapper">
+    <div class="section" id="top">
+        <div class="container hero fade-in one">
+            <h1 class="bold-title is-1">Blog</h1>
+        </div>
+    </div>
+    <div class="section fade-in two">
+        <div class="container">
+            <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"
+          onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">Home</a>
+      </span>
+      <span class="nav-item">
+        <a href="/#about">About</a> 
+      </span>
+      <span class="nav-item">
+        <a href="/projects">Projects</a>
+      </span>
+      <span class="nav-item">
+        <a href="/blog">Blog</a>
+      </span>
+        <span class="nav-item">
+        <a href="/#contacts">Contacts</a>
+      </span>
+    </div>
+</nav>
+<hr>
+        </div>
+        <div class="container fade-in two">
+            <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/how-i-am-blogging-with-hugo/">How I am blogging with Hugo</a></h2>
+            <div class="post-data">
+                Apr 11, 2017 |
+                
+                    2 minutes read
+                
+            </div>
+            
+        </div>
+        <div class="container markdown fade-in two top-pad">
+            
+
+<p>In case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">Hugo</a>.  If you want to know more, <a href="/projects/this-site/">click here</a>.</p>
+
+<p>In this article i will describe my posting process.</p>
+
+<h2 id="writing-post:aa48d3174330dc156584841e89c069c1">Writing post</h2>
+
+<p>It all starts with creating a post. It is very easy achievable by following comand:</p>
+
+<pre><code>hugo new blog/&lt;article-name&gt;.md
+</code></pre>
+
+<p>New file contains this:</p>
+
+<pre><code>+++
+ date = &quot;2017-04-11T17:38:52+05:00&quot;
+ title = &quot;&lt;article-name&gt;&quot;  
++++
+</code></pre>
+
+<p>That stuff inside triple plusses called Front Matter. I don&rsquo;t want to go deeper in this, this all described very well in <a href="https://gohugo.io/content/front-matter/">docs</a>.</p>
+
+<p>Next thing is to humanize title, add taxonomies or categories, if you are using any (<em>I am not using taxonomies or categories at the moment, but I will think about it and maby categorize my blogposts in future</em>)</p>
+
+<p>The last thing is to write post itself. Hugo uses markdown (<em>I am not sure if there are other options, but I am totaly happy with markdown</em>)</p>
+
+<h2 id="deployment:aa48d3174330dc156584841e89c069c1">Deployment</h2>
+
+<p>Hugo makes it really easy to update your site.</p>
+
+<p>Docs provide you with ready-to-use script which will make all the work for you. I am using Github Pages as my hosting, so my deployment script looks like this:</p>
+
+<pre><code class="language-deploy.sh:">    echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+    
+    # Build the project.
+    hugo # if using a theme, replace by `hugo -t &lt;yourtheme&gt;`
+    
+    # Go To Public folder
+    cd public
+    # Add changes to git.
+    git add -A
+    
+    # Commit changes.
+    msg=&quot;rebuilding site `date`&quot;
+    if [ $# -eq 1 ]
+      then msg=&quot;$1&quot;
+    fi
+    git commit -m &quot;$msg&quot;
+    
+    # Push source and build repos.
+    git push origin master
+        
+    # Come Back
+    cd ..
+</code></pre>
+
+<p>Make this file executable and simply run it. I don&rsquo;t even have to type username and password for my Github account, because I am pushing with SHH. That&rsquo;s all!</p>
+
+        </div>
+        <div class="disqus">
+            
+        </div>
+    </div>
+</div>
+<footer class="footer fade-in three" id="footer">
+    <div class="container has-text-centered">
+        
+            <span class="footer-text"><a href="https://github.com/vickylaixy/hugo-theme-introduction" target="_blank">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank">Hugo</a>. <i class="fa fa-copyright"></i> Dmitry Belamov 2017</span>
+        
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="application/javascript" src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+
+<script type="text/javascript" src=/js/init.js></script>
+<script>
+
+$('a[href^="#"]').click(function(e) {
+    
+    e.preventDefault();
+    
+    
+    $(window).stop(true).scrollTo(this.hash, {duration:500, interrupt:false});
+});
+</script>
