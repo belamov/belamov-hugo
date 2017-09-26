@@ -7,6 +7,8 @@ Recently I read an article <a href='https://hackernoon.com/why-i-stopped-using-m
 
 Let's review author's points on topic.
 
+<!--more-->
+
 Firstly, author stated that multiple monitors are counter-productive, they decrease your amount of focus. Anything that's on your second monitor distracts you.
 
 >  You’re much more likely to keep working if your email, social media, and so on aren’t visible
