@@ -6793,11 +6793,13 @@ ul {
     list-style: none
 }
 
-.markdown li {
-    list-style-type: disc;
+.markdown ul, .markdown ol {
     margin-left: 1.5em;
     list-style-position: outside;
     padding-left: 1em
+}
+.markdown ul li {
+    list-style-type: disc;
 }
 
 .markdown em {

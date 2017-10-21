@@ -6,8 +6,9 @@ comments = true
 +++
 
 To be honest I'm not sure if this blog will be updated. The problem is lack of experience, so I can't write any usefull posts, not at my current level. Maybe I will remove this section completely untill I find topics I'm able to write about. We'll see in future.
-<!--more-->
+
 *Updated:*
+<!--more-->
 
 I read an interesting [article](http://pablojuan.com/want-to-blog-read-this/) that motivated me to write in my blog.
 

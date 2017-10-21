@@ -10,7 +10,7 @@ It is made with [Hugo](https://gohugo.io/) - static site generator.
 
 ## Why hugo?
 
-The main reason is that sites built with hugo don't need any runtime like PHP or Python. So i can deploy such a site to a Github Pages, for example. No expencies on web hostings and domain names (as for now, I plan to buy a normal domain name soon).
+The main reason is that sites built with hugo don't need any runtime like PHP or Python. So i can deploy such a site to a Github Pages, for example. No expencies on web hostings and easy deployment.
 
 The other reason is that hugo is pretty simple to use. 
 

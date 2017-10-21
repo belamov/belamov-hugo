@@ -61,5 +61,12 @@ Docs provide you with ready-to-use script which will make all the work for you. 
 
 Make this file executable and simply run it. I don't even have to type username and password for my Github account, because I am pushing with SHH. That's all!
 
+*Updated:*
 
+I decided to keep both raw and compiled site in one repo. It is much easier to maintain. 
+
+So now deployment is as easy as:
+
+1. Run ```hugo```. This command compiles your site to clear html
+2. Commit changes and push them to Github
 

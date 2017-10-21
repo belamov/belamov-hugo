@@ -10,7 +10,7 @@ publishdir          = "docs"
 googleAnalytics     = "UA-97199672-1"
 disableKinds        = ["RSS"]
 
-disqusshortname   = "belamov" # Enable Disqus for comments
+disqusShortname   = "belamov"
 
 [permalinks]
 fixed = ":title/"
