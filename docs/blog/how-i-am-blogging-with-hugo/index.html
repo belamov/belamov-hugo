@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1508606902">
+        <link rel="stylesheet" href="/css/style.css?t=1508609789">
         
     
     <link rel="shortcut icon"
@@ -99,13 +99,12 @@ ga('send', 'pageview');
             
         </div>
         <div class="container markdown fade-in two top-pad">
-            
+            <p>In case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">Hugo</a>.  If you want to know more, <a href="/projects/this-site/">click here</a>.</p>
 
-<p>In case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">Hugo</a>.  If you want to know more, <a href="/projects/this-site/">click here</a>.</p>
+<p>In this article i will describe my posting process.
+</p>
 
-<p>In this article i will describe my posting process.</p>
-
-<h2 id="writing-post:aa48d3174330dc156584841e89c069c1">Writing post</h2>
+<h2 id="writing-post">Writing post</h2>
 
 <p>It all starts with creating a post. It is very easy achievable by following comand:</p>
 
@@ -126,7 +125,7 @@ ga('send', 'pageview');
 
 <p>The last thing is to write post itself. Hugo uses markdown (<em>I am not sure if there are other options, but I am totaly happy with markdown</em>)</p>
 
-<h2 id="deployment:aa48d3174330dc156584841e89c069c1">Deployment</h2>
+<h2 id="deployment">Deployment</h2>
 
 <p>Hugo makes it really easy to update your site.</p>
 
@@ -157,25 +156,29 @@ ga('send', 'pageview');
 </code></pre>
 
 <p>Make this file executable and simply run it. I don&rsquo;t even have to type username and password for my Github account, because I am pushing with SHH. That&rsquo;s all!</p>
-
         </div>
         
             <div class="disqus container fade-in two">
                 <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'belamov';
-    var disqus_identifier = '\/blog\/how-i-am-blogging-with-hugo\/';
-    var disqus_title = 'How I am blogging with Hugo';
-    var disqus_url = '\/blog\/how-i-am-blogging-with-hugo\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "belamov" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
             </div>
         
     </div>

@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1508606902">
+        <link rel="stylesheet" href="/css/style.css?t=1508609789">
         
     
     <link rel="shortcut icon"
@@ -95,7 +95,8 @@ ga('send', 'pageview');
             </div>
             <div class="columns ">
                 <div class="column markdown is-three-quarters">
-                    <p>This book very disappointed me. I expected a lot more from it.</p>
+                    <p>This book very disappointed me. I expected a lot more from it.
+</p>
 
 <p>Only first 6 chapters was useful. Rest of it is too Java-specific. And a lot of code that is listed in full. To be fair, author warns you at the beginning that you have to read a lot of code. But It is super uncomfortable.</p>
 
@@ -108,7 +109,6 @@ ga('send', 'pageview');
 <p>If you are not familiar with Java, only first 5 or 6 chapters are worth of your time. But a lot of thoughts are obvious. If you have any experience in production programming, you would come to the same ideas.</p>
 
 <p>I recommend this book only to beginner programmers. If your main language is Java, it will be also useful to you (probably)</p>
-
                 </div>
                 <div class="colums is-one-quarter">
                     <img src="img/clean-code.jpg" alt="project preview" class="image">
@@ -119,20 +119,25 @@ ga('send', 'pageview');
     
     <div class="disqus container fade-in two">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'belamov';
-    var disqus_identifier = '\/bookshelf\/clean-code\/';
-    var disqus_title = 'Robert C. Martin - Clean Code. A Handbook of Agile Software Craftsmanship';
-    var disqus_url = '\/bookshelf\/clean-code\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "belamov" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
     
 </div>
