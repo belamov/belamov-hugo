@@ -1,6 +1,7 @@
 +++
 date = "2017-04-10T20:32:57+05:00"
 title = "Welcome Post"
+comments = true
 
 +++
 

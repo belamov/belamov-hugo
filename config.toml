@@ -10,7 +10,7 @@ publishdir          = "docs"
 googleAnalytics     = "UA-97199672-1"
 disableRSS          = true
 
-# disqusshortname   = "xxx" # Enable Disqus for comments
+disqusshortname   = "belamov" # Enable Disqus for comments
 # googleAnalytics   = "xxx"
 
 [permalinks]

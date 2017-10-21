@@ -1,6 +1,7 @@
 +++
 date = "2017-04-11T17:38:52+05:00"
 title = "How I am blogging with Hugo"
+comments = true
 
 +++
 

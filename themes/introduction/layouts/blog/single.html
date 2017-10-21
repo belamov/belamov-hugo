@@ -48,9 +48,11 @@
         <div class="container markdown fade-in two top-pad">
             {{ .Content }}
         </div>
-        <div class="disqus">
-            {{ template "_internal/disqus.html" . }}
-        </div>
+        {{ if .Params.comments }}
+            <div class="disqus container fade-in two">
+                {{ template "_internal/disqus.html" . }}
+            </div>
+        {{ end }}
     </div>
 </div>
 {{ partial "footer.html" . }}

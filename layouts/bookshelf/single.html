@@ -1,0 +1,36 @@
+{{ partial "header.html" . }}
+<div class="wrapper">
+    <div class="section" id="top">
+        <div class="container hero fade-in one">
+            <h1 class="bold-title is-1">Bookshelf</h1>
+        </div>
+    </div>
+    <div class="section fade-in two">
+        <div class="container">
+            {{ partial "nav-list.html" . }}
+        </div>
+        <div class="container fade-in two">
+            <h1 class="title is-1 strong-post-title">{{ .Title }}</h1>
+            <div class="columns">
+                {{if .Params.downloadLink}}
+                    <a href="{{ .Params.link }}" style="display: block;" target="_blank" class="column is-2">Link</a>
+                {{end}}
+            </div>
+            <div class="columns ">
+                <div class="column markdown is-three-quarters">
+                    {{ .Content }}
+                </div>
+                <div class="colums is-one-quarter">
+                    <img src="{{ .Params.imagelink }}" alt="project preview" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ if .Params.comments }}
+    <div class="disqus container fade-in two">
+        {{ template "_internal/disqus.html" . }}
+    </div>
+    {{ end }}
+</div>
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" }}
