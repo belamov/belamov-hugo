@@ -10,7 +10,7 @@
             </div>
             <div class="container">
                 <div class="columns is-multiline">
-                    {{ range .Data.Pages.ByPublishDate }}
+                    {{ range .Data.Pages.ByPublishDate.Reverse }}
                         {{ if eq .Section "projects" }}
                             <div class="column is-one-third">
                                 <a href="{{ .RelPermalink }}">

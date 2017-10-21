@@ -9,7 +9,7 @@
                 {{ partial "nav-list.html" . }}
             </div>
             <div class="container top-pad">
-                {{ range .Data.Pages.ByPublishDate }}
+                {{ range .Data.Pages.ByPublishDate.Reverse }}
                     {{ if eq .Section "blog" }}
                         <div class="section no-padding">
                             <div class="summary">

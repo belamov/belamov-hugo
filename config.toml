@@ -8,10 +8,9 @@ contentdir          = "content"
 layoutdir           = "layouts"
 publishdir          = "docs"
 googleAnalytics     = "UA-97199672-1"
-disableRSS          = true
+disableKinds        = ["RSS"]
 
 disqusshortname   = "belamov" # Enable Disqus for comments
-# googleAnalytics   = "xxx"
 
 [permalinks]
 fixed = ":title/"
