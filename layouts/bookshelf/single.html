@@ -11,13 +11,16 @@
         </div>
         <div class="container fade-in two">
             <h1 class="title is-1 strong-post-title">{{ .Title }}</h1>
-            <div class="columns">
-                {{if .Params.downloadLink}}
-                    <a href="{{ .Params.link }}" style="display: block;" target="_blank" class="column is-2">Link</a>
-                {{end}}
+            <div class="post-data">
+                {{ .Date.Format .Site.Params.dateform }} |
+                {{ if eq 1 .ReadingTime }}
+                {{ .ReadingTime }} minute read
+                {{ else }}
+                {{ .ReadingTime }} minutes read
+                {{ end }}
             </div>
-            <div class="columns ">
-                <div class="column markdown is-three-quarters">
+            <div class="columns markdown">
+                <div class="column is-three-quarters">
                     {{ .Content }}
                 </div>
                 <div class="colums is-one-quarter">
