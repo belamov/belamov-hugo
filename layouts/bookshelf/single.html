@@ -28,12 +28,11 @@
                 </div>
             </div>
         </div>
+        <div class="container fade-in two top-pad has-text-centered">
+            If you want to share your thoughts about this, look at <a href="/#contacts">contacts section</a> to reach
+            me.
+        </div>
     </div>
-    {{ if .Params.comments }}
-    <div class="disqus container fade-in two">
-        {{ template "_internal/disqus.html" . }}
-    </div>
-    {{ end }}
 </div>
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" }}

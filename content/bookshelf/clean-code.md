@@ -2,7 +2,6 @@
 date = "2017-10-21T21:52:57+05:00"
 title = "Robert C. Martin - Clean Code. A Handbook of Agile Software Craftsmanship"
 imageLink = "img/clean-code.jpg"
-comments = true
 
 +++
 

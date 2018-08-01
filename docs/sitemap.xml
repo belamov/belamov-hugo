@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/epub-parser/</loc>
+    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/iblocks-to-yandex-news/</loc>
+    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/laravel-rabbit-mq-listener/</loc>
+    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/bookshelf/clean-code/</loc>
     <lastmod>2017-10-21T21:52:57+05:00</lastmod>
   </url>
@@ -15,11 +30,6 @@
   <url>
     <loc>/blog/my-thoughts-on-multiple-monitors/</loc>
     <lastmod>2017-09-24T16:40:10+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/imkurs/</loc>
-    <lastmod>2017-09-24T16:22:55+05:00</lastmod>
   </url>
   
   <url>
@@ -38,16 +48,6 @@
   </url>
   
   <url>
-    <loc>/projects/recipe-book/</loc>
-    <lastmod>2017-04-10T13:16:34+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/personal-site/</loc>
-    <lastmod>2017-04-09T10:25:16+05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contact/</loc>
     <lastmod>2017-03-09T13:23:28+08:00</lastmod>
   </url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-10-21T21:52:57+05:00</lastmod>
+    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,7 +82,7 @@
   
   <url>
     <loc>/projects/</loc>
-    <lastmod>2017-09-24T16:22:55+05:00</lastmod>
+    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
     <priority>0</priority>
   </url>
   
