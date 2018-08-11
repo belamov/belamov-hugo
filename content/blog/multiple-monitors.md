@@ -38,10 +38,6 @@ So, It is obvious that author is not a web developer, he doesn't write code.
 
 I won't ever switch to one monitor setup again. Second monitor boosts my productivity. I worked with one monitor a lot time and switching between applications really annoyed me.
 
-As a bonus, here is my current workspace at home:
-
-![setup](img/setup.JPG)
-
 
 
 

@@ -158,7 +158,8 @@ pre {
     color: #4a4a4a;
     font-size: 0.8em;
     white-space: pre;
-    word-wrap: normal
+    word-wrap: normal;
+    margin-bottom: 1rem;
 }
 
 pre code {

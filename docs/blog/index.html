@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1533146187">
+        <link rel="stylesheet" href="/css/style.css?t=1533996419">
         
     
     <link rel="shortcut icon"
@@ -94,6 +94,33 @@ if (!doNotTrack) {
 <hr>
             </div>
             <div class="container top-pad">
+                
+                    
+                        <div class="section no-padding">
+                            <div class="summary">
+                                <h3 class="title is-3 strong-post-title">
+                                    <a href="/blog/late-static-bindings-in-php/">
+                                        Late static bindings in php
+                                    </a>
+                                </h3>
+                                Aug 11, 2018 |
+                                
+                                    3 minutes read
+                                
+                                <div class="markdown top-pad">
+                                    So recently I&rsquo;ve been working with one php library. This library is a parser that behave as an event dispatcher.
+Basic usage of it is as follow:
+$parser = new Parser($factory); $parser-&gt;addListener(&quot;EventA&quot;, function (HandlerA $handler) { $data = $handler-&gt;getData(); }); $parser-&gt;parse($file);  This $factory variable is optional, as library contains its own handlers for any event.
+But however I needed to tweak factory behavior for my needs.
+Library&rsquo;s factory class contained something like this to determinate which handlers are responsible for which event:
+                                    
+                                    <a href="/blog/late-static-bindings-in-php/">...Read More</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    
                 
                     
                         <div class="section no-padding">

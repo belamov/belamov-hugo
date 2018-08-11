@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/late-static-bindings-in-php/</loc>
+    <lastmod>2018-08-11T18:45:52+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/epub-parser/</loc>
     <lastmod>2018-08-01T10:25:16+05:00</lastmod>
   </url>
@@ -59,13 +64,13 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
+    <lastmod>2018-08-11T18:45:52+05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2017-09-24T16:40:10+05:00</lastmod>
+    <lastmod>2018-08-11T18:45:52+05:00</lastmod>
     <priority>0</priority>
   </url>
   
