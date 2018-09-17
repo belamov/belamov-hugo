@@ -1,8 +1,6 @@
 +++
 date = "2017-04-11T17:38:52+05:00"
 title = "How I am blogging with Hugo"
-comments = true
-
 +++
 
 In case you didn't notice, this blog and all other parts of this site is made by [Hugo](https://gohugo.io).  If you want to know more, [click here]({{< ref "projects/this-site.md" >}}).

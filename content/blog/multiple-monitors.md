@@ -1,8 +1,6 @@
 +++
 date = "2017-09-24T16:40:10+05:00"
 title = "My thoughts on multiple monitors"
-comments = true
-
 +++
 Recently I read an article <a href='https://hackernoon.com/why-i-stopped-using-multiple-monitors-bfd87efa2e5b'>Why I Stopped Using Multiple Monitors</a> 
 

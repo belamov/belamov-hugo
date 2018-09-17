@@ -2,7 +2,6 @@
 date = "2017-10-21T14:18:55+05:00"
 title = "Robert C. Martin - The Clean Coder: A Code of Conduct for Professional Programmers"
 imagelink = "img/clean-coder.jpg"
-comments = true
 +++
 
 TL;DL: good book about soft skills mostly, I recommend it to every programmer

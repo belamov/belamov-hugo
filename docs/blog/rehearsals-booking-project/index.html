@@ -14,10 +14,10 @@
     <title>
         
         
-            Belamov | How I am blogging with Hugo
+            Belamov | Rehearsals booking project
         
     </title>
-    <link rel="canonical" href="/blog/how-i-am-blogging-with-hugo/">
+    <link rel="canonical" href="/blog/rehearsals-booking-project/">
     
     
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
@@ -93,84 +93,58 @@ if (!doNotTrack) {
 <hr>
         </div>
         <div class="container fade-in two">
-            <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/how-i-am-blogging-with-hugo/">How I am blogging with Hugo</a></h2>
+            <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/rehearsals-booking-project/">Rehearsals booking project</a></h2>
             <div class="post-data">
-                Apr 11, 2017 |
+                Sep 17, 2018 |
                 
-                2 minutes read
+                3 minutes read
                 
             </div>
             
         </div>
         <div class="container markdown fade-in two top-pad">
-            <p>In case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">Hugo</a>.  If you want to know more, <a href="/projects/this-site/">click here</a>.</p>
+            
 
-<p>In this article i will describe my posting process.
-</p>
+<p>I&rsquo;ve been thinking about this project for a long time. I even began to working on it. First I tried to implement it with Django, but this framework really disappointed me. I didn&rsquo;t like it personally. I don&rsquo;t think that python is good language for complex business logic. In my opinion it is more suitable for some kind of relatively small scripts or something academic, like machine learning.</p>
 
-<h2 id="writing-post">Writing post</h2>
+<p>Later I&rsquo;ve rewritten it in Laravel but I got stuck in frontend. I was using some admin template, but it was too difficult and overwhelming, a lot of features and unnecessary complexion. I got frustrated and bailed on this project completely.</p>
 
-<p>It all starts with creating a post. It is very easy achievable by following comand:</p>
+<p>But now I decided to finish it. It will be a very good piece for my portfolio and also it has very good potential, I think.</p>
 
-<pre><code>hugo new blog/&lt;article-name&gt;.md
-</code></pre>
+<p>The idea of project is very simple.</p>
 
-<p>New file contains this:</p>
+<h2 id="problem">Problem</h2>
 
-<pre><code>+++
- date = &quot;2017-04-11T17:38:52+05:00&quot;
- title = &quot;&lt;article-name&gt;&quot;  
-+++
-</code></pre>
+<p>In my city there is about 10 places where you can book a rehearsal for your band. You simply paying for hours and practice with your band.</p>
 
-<p>That stuff inside triple plusses called Front Matter. I don&rsquo;t want to go deeper in this, this all described very well in <a href="https://gohugo.io/content/front-matter/">docs</a>.</p>
+<p>But the process of booking is painful. The main inconvenience is that all of this places are not connected in any way. You have to manually search for them and talk to owners about available time. Zero interactivity.</p>
 
-<p>Next thing is to humanize title, add taxonomies or categories, if you are using any (<em>I am not using taxonomies or categories at the moment, but I will think about it and maby categorize my blogposts in future</em>)</p>
+<p>I&rsquo;ve never spoken to rehearsal base&rsquo;s owners, but I&rsquo;m guessing that they have outdated way of managing their bases. It is probably some sort of textbook, maybe excel.</p>
 
-<p>The last thing is to write post itself. Hugo uses markdown (<em>I am not sure if there are other options, but I am totaly happy with markdown</em>)</p>
+<h2 id="solution">Solution</h2>
 
-<h2 id="deployment">Deployment</h2>
+<p>I would like to aggregate all rehearsal stuff in one place. There will be list of all bases, very good search engine and filter, so band members will find a place to gather in no time and without any effort. Each base will have interactive schedule updated in real time, no more talking to owners, just pick your hours and book it.</p>
 
-<p>Hugo makes it really easy to update your site.</p>
+<p>And for owners there will be management page, where they can see how business is going, all relevant statistics and information.</p>
 
-<p>Docs provide you with ready-to-use script which will make all the work for you. I am using Github Pages as my hosting, so my deployment script looks like this:</p>
+<h2 id="plan">Plan</h2>
 
-<pre><code class="language-deploy.sh:">    echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
-    
-    # Build the project.
-    hugo # if using a theme, replace by `hugo -t &lt;yourtheme&gt;`
-    
-    # Go To Public folder
-    cd public
-    # Add changes to git.
-    git add -A
-    
-    # Commit changes.
-    msg=&quot;rebuilding site `date`&quot;
-    if [ $# -eq 1 ]
-      then msg=&quot;$1&quot;
-    fi
-    git commit -m &quot;$msg&quot;
-    
-    # Push source and build repos.
-    git push origin master
-        
-    # Come Back
-    cd ..
-</code></pre>
+<p>Very core functionality will be implemented in the beginning: bases search, rehearsal booking, admin panel to manage your base.</p>
 
-<p>Make this file executable and simply run it. I don&rsquo;t even have to type username and password for my Github account, because I am pushing with SHH. That&rsquo;s all!</p>
+<p>I struggled with frontend in previous iteration, probably because there wass a lot of bad jqery code (i&rsquo;m not good with javascript).</p>
 
-<p><em>Updated:</em></p>
-
-<p>I decided to keep both raw and compiled site in one repo. It is much easier to maintain.</p>
-
-<p>So now deployment is as easy as:</p>
+<p>Now I want SPA build with vuejs. In the backend there will be only rest api build with laravel.</p>
 
 <ol>
-<li>Run <code>hugo</code>. This command compiles your site to clear html</li>
-<li>Commit changes and push them to Github</li>
+<li><p>So first of all I need to learn Vuejs enough to build SPA. I got some courses for that framework.</p></li>
+
+<li><p>Next is backend. I&rsquo;m very confident with laravel and rest api stuff, so there will be no problems</p></li>
+
+<li><p>When MVP is ready and functional, make some presentation and contact rehearsal base owners, offer them a cooperation. tbh, I didn&rsquo;t think what kind of cooperation it would be. There&rsquo;s several options, I haven&rsquo;t decide yet. I guess we will come to resolution during interrogation</p></li>
+
+<li><p>Next step will depend on the deal with bases owners. If there will be no success, I&rsquo;m still going to continue working on that, just because it is interesting. I could learn new technologies, new products on relatively real project</p></li>
 </ol>
+
         </div>
         <div class="container fade-in two top-pad has-text-centered">
             If you want to share your thoughts about this, look at <a href="/#contacts">contacts section</a> to reach
