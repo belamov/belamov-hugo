@@ -5,7 +5,7 @@ title = "about"
 
 +++
 
-Hi, my name is Dmitry Belamov, I'm from Russia, Tyumen (time zone GMT+5).
+Hi, my name is belamov, I'm from Russia, Tyumen (time zone GMT+5).
 
 Firstly, i'm not native english speaker, so please don't mind any grammar mistakes. If you are kind enough, let me know about them. See [Contact](#contacts) section.
 

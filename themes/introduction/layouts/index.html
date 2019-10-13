@@ -11,9 +11,16 @@
         <div class="hero is-{{ .Site.Params.introheight }}">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="bold-title fade-in one">Hi, I'm {{ .Site.Params.firstname }}.</h1>
+                    <h1 class="bold-title fade-in one">Hi, I'm {{ .Site.Params.firstname }}</h1>
                     <h3 class="subtitle is-3 fade-in two">{{ .Site.Params.tagline }}</h3>
                     <div class="fade-in three">{{ partial "social.html" . }}</div>
+                    {{ if .Site.Params.email }}
+                    <h3 class="subtitle is-3 has-text-centered top-pad fade-in three">
+                        <a href="mailto:{{ .Site.Params.email }}">
+                            {{ .Site.Params.email }}
+                        </a>
+                    </h3>
+                    {{ end }}
                 </div>
             </div>
             <div class="hero-foot fade-in three container">
@@ -31,9 +38,6 @@
                         </div>
                         <div class="column nav-item">
                             <a href="/bookshelf/">Bookshelf</a>
-                        </div>
-                        <div class="column nav-item">
-                            <a href="#contacts">Contacts</a>
                         </div>
                     </div>
                 </div>
@@ -59,41 +63,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <hr>
-        </div>
-        {{ if .Site.Params.showprojects }}
-            <div class="section" id="projects">
-                {{ partial "projects.html" . }}
-            </div>
-            <div class="container">
-                <hr>
-            </div>
-        {{ end }}
-        {{ if .Site.Params.showblog }}
-            <div class="section" id="blog">
-                {{ partial "blogsection.html" . }}
-            </div>
-            <div class="container">
-                <hr>
-            </div>
-        {{ end }}
-        <div class="section" id="contacts">
-            <div class="container has-text-centered">
-                <h2 class="title is-2">Contacts</h2>
-                {{ if .Site.Params.email }}
-                    <h3 class="subtitle is-3 has-text-centered top-pad">
-                        <a href="mailto:{{ .Site.Params.email }}">
-                            {{ .Site.Params.email }}
-                        </a>
-                    </h3>
-                {{ end }}
-                {{ partial "social.html" . }}
-            </div>
-        </div>
-        <div class="container">
-            <hr>
         </div>
     </div>
 </div>

@@ -1,12 +1,9 @@
-<div class="social-icons">
+<div class="contact-icons">
     {{ if .Site.Params.twitter }}
     <a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
     {{ end }}
     {{ if .Site.Params.vk }}
     <a href="https://vk.com/{{ .Site.Params.vk }}" target="_blank"><i class="fa fa-vk"></i></a>
-    {{ end }}
-    {{ if .Site.Params.linkedin }}
-    <a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a> 
     {{ end }}
     {{ if .Site.Params.github }}
     <a href="https://github.com/{{ .Site.Params.github }}" target="_blank"><i class="fa fa-github"></i></a> 
@@ -14,16 +11,10 @@
     {{ if .Site.Params.telegram }}
     <a href="https://telegram.me/{{ .Site.Params.telegram }}" target="_blank"><i class="fa fa-telegram"></i></a>
     {{ end }}
-    {{ if .Site.Params.codepen }}
-    <a href="https://codepen.io/{{ .Site.Params.codepen }}" target="_blank"><i class="fa fa-codepen"></i></a> 
+    {{ if .Site.Params.youtube }}
+    <a href="{{ .Site.Params.youtube }}" target="_blank"><i class="fa fa-youtube"></i></a>
     {{ end }}
-    {{ if .Site.Params.pinterest }}
-    <a href="https://pinterest.com/{{ .Site.Params.pinterest }}" target="_blank"><i class="fa fa-pinterest"></i></a> 
-    {{ end }}
-    {{ if .Site.Params.facebook }}
-    <a href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a> 
-    {{ end }}
-    {{ if .Site.Params.googleplus }}
-    <a href="https://plus.google.com/+{{ .Site.Params.googleplus }}" target="_blank"><i class="fa fa-google-plus"></i></a> 
+    {{ if .Site.Params.twitch }}
+    <a href="{{ .Site.Params.twitch }}" target="_blank"><i class="fa fa-twitch"></i></a>
     {{ end }}
 </div>
