@@ -6892,13 +6892,13 @@ body {
     margin-bottom: 0;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 375px) {
     .contact-icons .fa {
         width: 40px !important;
     }
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
     .contact-icons .fa {
         width: 35px !important;
     }
