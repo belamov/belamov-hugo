@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1571251824">
+        <link rel="stylesheet" href="/css/style.css?t=1582545628">
         
     
     <link rel="shortcut icon"
@@ -48,7 +48,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    
     
 </head>
 <body lang="en">
@@ -82,9 +81,6 @@ if (!doNotTrack) {
         <span class="nav-item">
         <a href="/blog/">Blog</a>
       </span>
-        <span class="nav-item">
-        <a href="/bookshelf/">Bookshelf</a>
-      </span>
     </div>
 </nav>
 <hr>
@@ -100,77 +96,55 @@ if (!doNotTrack) {
         </div>
         <div class="container markdown fade-in two top-pad">
             <p>So recently I&rsquo;ve been working with one php library. This library is a parser that behave as an event dispatcher.</p>
-
 <p>Basic usage of it is as follow:</p>
-
-<pre><code class="language-php">$parser = new Parser($factory);
-$parser-&gt;addListener(&quot;EventA&quot;, function (HandlerA $handler) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$parser = new Parser($factory);
+$parser-&gt;addListener(&#34;EventA&#34;, function (HandlerA $handler) {
     $data = $handler-&gt;getData();
 });
 $parser-&gt;parse($file);
-</code></pre>
-
-<p>This <code>$factory</code> variable is optional, as library contains its own handlers for any event.</p>
-
+</code></pre></div><p>This <code>$factory</code> variable is optional, as library contains its own handlers for any event.</p>
 <p>But however I needed to tweak factory behavior for my needs.</p>
-
 <p>Library&rsquo;s factory class contained something like this to determinate which handlers are responsible for which event:</p>
-
-<pre><code class="language-php">class Factory
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class Factory
 {
     protected static $objects = [
-        'EventA' =&gt; 'HandlerA',
-        'EventB' =&gt; 'HandlerB',
-        'EventC' =&gt; 'HandlerC',
+        &#39;EventA&#39; =&gt; &#39;HandlerA&#39;,
+        &#39;EventB&#39; =&gt; &#39;HandlerB&#39;,
+        &#39;EventC&#39; =&gt; &#39;HandlerC&#39;,
     ];
     
     // other logic 
 }
-</code></pre>
-
-<p>Let&rsquo;s say that I need to write my own handler for event A. <code>Parser</code> class uses dependency injection to easily switch factory. All internal properties are protected, not private, so it is no problem to just extend this class and override <code>objects</code> variables. I should do it in no time!</p>
-
-<pre><code class="language-php">class MyFactory extends Factory
+</code></pre></div><p>Let&rsquo;s say that I need to write my own handler for event A. <code>Parser</code> class uses dependency injection to easily switch factory. All internal properties are protected, not private, so it is no problem to just extend this class and override <code>objects</code> variables. I should do it in no time!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class MyFactory extends Factory
 {
     protected static $objects = [
-        'EventA' =&gt; 'MyHandlerA',
-        'EventB' =&gt; 'HandlerB',
-        'EventC' =&gt; 'HandlerC',
+        &#39;EventA&#39; =&gt; &#39;MyHandlerA&#39;,
+        &#39;EventB&#39; =&gt; &#39;HandlerB&#39;,
+        &#39;EventC&#39; =&gt; &#39;HandlerC&#39;,
     ];
 }
 
 $parser = new Parser(new MyFactory());
-$parser-&gt;addListener(&quot;EventA&quot;, function (MyHandlerA $handler) {
+$parser-&gt;addListener(&#34;EventA&#34;, function (MyHandlerA $handler) {
     $data = $handler-&gt;getData();
 });
 $parser-&gt;parse($file);
-</code></pre>
-
-<p>Everything seems right, no errors, no notices, but my tweak doesn&rsquo;t work!. Whenever I handle event A, I still working with it in HandlerA class, not MyHandlerA class.</p>
-
+</code></pre></div><p>Everything seems right, no errors, no notices, but my tweak doesn&rsquo;t work!. Whenever I handle event A, I still working with it in HandlerA class, not MyHandlerA class.</p>
 <p>What&rsquo;s the problem? Let&rsquo;s look into object creation method in factory (very simplified version):</p>
-
-<pre><code class="language-php">public function createHandler($event)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function createHandler($event)
 {
     return new self::$objects[$event];
 }
-</code></pre>
-
-<p>Seems right, isn&rsquo;t it? It calls <code>self::$objects</code>, and in my extended class this variable is overridden. But why isn&rsquo;t it working?</p>
-
+</code></pre></div><p>Seems right, isn&rsquo;t it? It calls <code>self::$objects</code>, and in my extended class this variable is overridden. But why isn&rsquo;t it working?</p>
 <p>The problem is in difference of early and late static binding in php.</p>
-
 <p>From <a href="http://php.net/manual/en/language.oop5.late-static-bindings.php">PHP Docs</a>:</p>
-
 <blockquote>
 <p>Static references to the current class like self:: are resolved using the class in which the function belongs, as in where it was defined:</p>
 </blockquote>
-
 <p>In other words, it references variable in class that contains this method, not the class that is loaded in runtime.</p>
-
 <p>Best way to describe how late static binding works is this code (I found it in StackOverflow):</p>
-
-<pre><code class="language-php">class A {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class A {
     public static function get_self() {
         return new self();
     }
@@ -186,12 +160,8 @@ echo get_class(B::get_self());  // A
 echo get_class(B::get_static()); // B
 echo get_class(A::get_self()); // A
 echo get_class(A::get_static()); // A
-</code></pre>
-
-<p>So if author of this library used <code>static::$objects[$event]</code> my tweak would have worked and library would become much more extendable.</p>
-
+</code></pre></div><p>So if author of this library used <code>static::$objects[$event]</code> my tweak would have worked and library would become much more extendable.</p>
 <p>I had to copy-paste all of the Factory class to make my tweak work. And whenever this library is updated, I have to redo ths gross thing. Of course, you can fork this library, but then you have to sync your fork to original. None of this methods are pretty in my opinion.</p>
-
 <p>Hope you knew something new and won&rsquo;t fall into this trap in your own libraries.</p>
 
         </div>
@@ -200,7 +170,7 @@ echo get_class(A::get_static()); // A
 <footer class="footer fade-in three" id="footer">
     <div class="container has-text-centered">
         
-            <span class="footer-text"><a href="https://github.com/vickylaixy/hugo-theme-introduction" target="_blank">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank">Hugo</a>. <i class="fa fa-copyright"></i> belamov 2019</span>
+            <span class="footer-text"><a href="https://github.com/vickylaixy/hugo-theme-introduction" target="_blank">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank">Hugo</a>. <i class="fa fa-copyright"></i> belamov 2020</span>
         
     </div>
 </footer>

@@ -2,7 +2,7 @@
 <div class="wrapper">
     <div class="section" id="top">
         <div class="container hero fade-in one">
-            <h1 class="bold-title is-1">Bookshelf</h1>
+            <h1 class="bold-title is-1">Blog</h1>
         </div>
     </div>
     <div class="section fade-in two">
@@ -10,7 +10,7 @@
             {{ partial "nav-list.html" . }}
         </div>
         <div class="container fade-in two">
-            <h1 class="title is-1 strong-post-title">{{ .Title }}</h1>
+            <h2 class="title is-1 top-pad strong-post-title">{{ .Title }}</h2>
             <div class="post-data">
                 {{ .Date.Format .Site.Params.dateform }} |
                 {{ if eq 1 .ReadingTime }}
@@ -19,14 +19,9 @@
                 {{ .ReadingTime }} minutes read
                 {{ end }}
             </div>
-            <div class="columns markdown">
-                <div class="column is-three-quarters">
-                    {{ .Content }}
-                </div>
-                <div class="colums is-one-quarter">
-                    <img src="{{ .Params.imagelink }}" alt="project preview" class="image">
-                </div>
-            </div>
+        </div>
+        <div class="container markdown fade-in two top-pad">
+            {{ .Content }}
         </div>
     </div>
 </div>

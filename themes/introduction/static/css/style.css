@@ -6891,3 +6891,18 @@ body {
 .columns.is-fullwidth.has-text-centered{
     margin-bottom: 0;
 }
+
+@media screen and (min-width: 375px) {
+    .contact-icons .fa {
+        width: 40px !important;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .contact-icons .fa {
+        width: 35px !important;
+    }
+    .subtitle.is-3 {
+        font-size: 1.9rem !important;
+    }
+}

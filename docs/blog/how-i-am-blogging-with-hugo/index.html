@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1571251824">
+        <link rel="stylesheet" href="/css/style.css?t=1582545628">
         
     
     <link rel="shortcut icon"
@@ -48,7 +48,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    
     
 </head>
 <body lang="en">
@@ -82,9 +81,6 @@ if (!doNotTrack) {
         <span class="nav-item">
         <a href="/blog/">Blog</a>
       </span>
-        <span class="nav-item">
-        <a href="/bookshelf/">Bookshelf</a>
-      </span>
     </div>
 </nav>
 <hr>
@@ -100,37 +96,24 @@ if (!doNotTrack) {
         </div>
         <div class="container markdown fade-in two top-pad">
             <p>In case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">Hugo</a>.  If you want to know more, <a href="/projects/this-site/">click here</a>.</p>
-
 <p>In this article i will describe my posting process.</p>
-
 <h2 id="writing-post">Writing post</h2>
-
 <p>It all starts with creating a post. It is very easy achievable by following comand:</p>
-
 <pre><code>hugo new blog/&lt;article-name&gt;.md
 </code></pre>
-
 <p>New file contains this:</p>
-
 <pre><code>+++
  date = &quot;2017-04-11T17:38:52+05:00&quot;
  title = &quot;&lt;article-name&gt;&quot;  
 +++
 </code></pre>
-
 <p>That stuff inside triple plusses called Front Matter. I don&rsquo;t want to go deeper in this, this all described very well in <a href="https://gohugo.io/content/front-matter/">docs</a>.</p>
-
 <p>Next thing is to humanize title, add taxonomies or categories, if you are using any (<em>I am not using taxonomies or categories at the moment, but I will think about it and maby categorize my blogposts in future</em>)</p>
-
 <p>The last thing is to write post itself. Hugo uses markdown (<em>I am not sure if there are other options, but I am totaly happy with markdown</em>)</p>
-
 <h2 id="deployment">Deployment</h2>
-
 <p>Hugo makes it really easy to update your site.</p>
-
 <p>Docs provide you with ready-to-use script which will make all the work for you. I am using Github Pages as my hosting, so my deployment script looks like this:</p>
-
-<pre><code class="language-deploy.sh:">    echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+<pre><code class="language-deploy.sh:" data-lang="deploy.sh:">    echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
     
     # Build the project.
     hugo # if using a theme, replace by `hugo -t &lt;yourtheme&gt;`
@@ -152,16 +135,10 @@ if (!doNotTrack) {
         
     # Come Back
     cd ..
-</code></pre>
-
-<p>Make this file executable and simply run it. I don&rsquo;t even have to type username and password for my Github account, because I am pushing with SHH. That&rsquo;s all!</p>
-
+</code></pre><p>Make this file executable and simply run it. I don&rsquo;t even have to type username and password for my Github account, because I am pushing with SHH. That&rsquo;s all!</p>
 <p><em>Updated:</em></p>
-
 <p>I decided to keep both raw and compiled site in one repo. It is much easier to maintain.</p>
-
 <p>So now deployment is as easy as:</p>
-
 <ol>
 <li>Run <code>hugo</code>. This command compiles your site to clear html</li>
 <li>Commit changes and push them to Github</li>
@@ -172,7 +149,7 @@ if (!doNotTrack) {
 <footer class="footer fade-in three" id="footer">
     <div class="container has-text-centered">
         
-            <span class="footer-text"><a href="https://github.com/vickylaixy/hugo-theme-introduction" target="_blank">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank">Hugo</a>. <i class="fa fa-copyright"></i> belamov 2019</span>
+            <span class="footer-text"><a href="https://github.com/vickylaixy/hugo-theme-introduction" target="_blank">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank">Hugo</a>. <i class="fa fa-copyright"></i> belamov 2020</span>
         
     </div>
 </footer>
