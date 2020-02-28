@@ -5,6 +5,6 @@ title = "about"
 
 +++
 
-Hi, my name is belamov, I'm from Russia, Tyumen (time zone GMT+5).
+Hi, my name is belamov, I'm from Russia, Tyumen (time zone UTC/GMT +5 hours).
 
 I specialize in backend and laravel, but I can do frontend stuff too.
