@@ -2111,7 +2111,7 @@ button.button, input[type="submit"].button {
 .image img {
     margin: 0 auto;
     display: block;
-    height: 268px;
+    max-height: 268px;
 }
 
 .image.is-square img, .image.is-1by1 img, .image.is-4by3 img, .image.is-3by2 img, .image.is-16by9 img, .image.is-2by1 img {

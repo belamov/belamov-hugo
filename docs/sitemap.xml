@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/</loc>
+    <lastmod>2020-04-02T14:50:16+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/rehearsals-booking/</loc>
+    <lastmod>2020-04-02T14:50:16+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
     <lastmod>2019-10-13T14:55:28+05:00</lastmod>
   </url>
@@ -34,11 +44,6 @@
   
   <url>
     <loc>/projects/laravel-rabbit-mq-listener/</loc>
-    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
     <lastmod>2018-08-01T10:25:16+05:00</lastmod>
   </url>
   

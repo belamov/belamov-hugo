@@ -44,3 +44,6 @@ showlatest      = false # Show latest blog post summary
 sharebuttons    = false # On post pages, show share this social buttons
 
 showprojects    = false # Show Projects section on home page
+
+[markup.goldmark.renderer]
+unsafe= true
