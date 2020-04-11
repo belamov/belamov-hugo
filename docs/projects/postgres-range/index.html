@@ -14,10 +14,10 @@
     <title>
         
         
-            Belamov | Laravel Package - RabbitMQ listener
+            Belamov | PostgreSQL range types support for Laravel
         
     </title>
-    <link rel="canonical" href="/projects/laravel-rabbit-mq-listener/">
+    <link rel="canonical" href="/projects/postgres-range/">
     
     
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
@@ -86,20 +86,30 @@ if (!doNotTrack) {
 <hr>
         </div>
         <div class="container fade-in two">
-            <h1 class="title is-1 strong-post-title">Laravel Package - RabbitMQ listener</h1>
+            <h1 class="title is-1 strong-post-title">PostgreSQL range types support for Laravel</h1>
             <div class="columns">
                 
                 
-                    <a href="https://github.com/belamov/laravel-rabbitmq-listener" style="display: block;" target="_blank" class="column is-2">Source code</a>
+                    <a href="https://github.com/belamov/postgres-range" style="display: block;" target="_blank" class="column is-2">Source code</a>
                 
             </div>
             <div class="columns ">
                 <div class="column markdown is-three-quarters">
-                    <p>This is a package for Laravel framework.</p>
-<p>It allows you to listen to RabbitMQ events.</p>
-<p>Don&rsquo;t be confused, It&rsquo;s functionality has nothing to do with queues. My coworker was using RabbitMQ as a synchroniser between main server and another web service. Main server generates various events like updating an image or adding a row in database. We got new project written with Laravel that needed to sync via that RabbitMQ bus. I haven&rsquo;t found any package that would solve my problem, so I wrote my own. Now two new projects use this package. Might be useful for somebody too.</p>
-<p>I tried to make it as general as possible, so you should implement some abstract classes and add some handler classes, because I can&rsquo;t predict the format of events from RabbitMQ</p>
-<p>Throughout instructions could be found in <a href="https://github.com/belamov/laravel-rabbitmq-listener/blob/master/README.md">readme</a>.</p>
+                    <p>It&rsquo;s a Laravel package for PosgreSQL range types support</p>
+<p>I discovered this article <a href="https://medium.com/@palypster/ranges-in-laravel-7-using-postgresql-c4bc69b91758">Date Ranges in Laravel</a> by <a href="https://github.com/palypster">Pavol Perdík</a>
+and approaches described there could really help me out in my <a href="/projects/rehearsals-booking/">Rehearsals booking project</a>.
+They really simplify a lot of queries for managing rehearsal time and prices&rsquo; intervals.</p>
+<p>I implemented them inside my project and was very happy with results,
+so I decided to extract that implementation into package
+(also added support for other range types, though I didn&rsquo;t use them).</p>
+<p>During the creation I dug deep into how Laravel manages migrations,
+and creates fields in database, that was a lot of fun!
+Also I finally got acquainted with Github Actions and CI,
+this project was perfect candidate to try them out on.</p>
+<p>I continued to stream my work, so if you are interested in watching
+my struggles, <a href="https://www.youtube.com/playlist?list=PL2znuYuctNg_o5Wg6tbRHfS0CAft0AKCk">there is a playlist</a>
+with livecoding of this package from scratch.</p>
+<p>Source code and documentation are available at <a href="https://github.com/belamov/postgres-range">github</a></p>
 
                 </div>
                 <div class="colums is-one-quarter">
