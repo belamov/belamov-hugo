@@ -6662,7 +6662,8 @@ ul {
 }
 
 .avatar {
-    border: none
+    border: none;
+    max-height: 600px;
 }
 
 @media screen and (max-width: 768px) {
