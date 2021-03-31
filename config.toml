@@ -1,6 +1,6 @@
 baseurl             = "/"
 languageCode        = "en-us"
-title               = "Belamov"
+title               = "belamov"
 theme               = "introduction"
 builddrafts         = false
 canonifyurls        = true
