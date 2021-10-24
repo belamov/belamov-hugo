@@ -38,12 +38,5 @@ telegram      = "belamov"
 youtube       = "https://www.youtube.com/channel/UC6pW-dee2xb1wWF4M58k-Sg"
 twitch        = "https://www.twitch.tv/belamov"
 
-showblog        = false # Show Blog section on home page
-showallposts    = false # Set 'true' to list all posts on home page, or set 'false' to link to separate blog list page
-showlatest      = false # Show latest blog post summary
-sharebuttons    = false # On post pages, show share this social buttons
-
-showprojects    = false # Show Projects section on home page
-
 [markup.goldmark.renderer]
 unsafe= true

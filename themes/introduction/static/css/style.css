@@ -6907,3 +6907,26 @@ body {
         font-size: 1.9rem !important;
     }
 }
+
+.skills {
+    list-style-type: circle;
+}
+.skills li{
+    display: inline;
+}
+
+.cv-subtitle{
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.cv-company-title{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.cv-company-site{
+    margin-bottom: 1.5rem;
+}
+.cv-dates{
+    font-weight: bold;
+    font-size: 1.3rem;
+}

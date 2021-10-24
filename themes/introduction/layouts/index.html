@@ -11,7 +11,7 @@
         <div class="hero is-{{ .Site.Params.introheight }}">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="bold-title fade-in one">hi, I'm {{ .Site.Params.firstname }}</h1>
+                    <h1 class="bold-title fade-in one">hi, i'm {{ .Site.Params.firstname }}</h1>
                     <h3 class="subtitle is-3 fade-in two">{{ .Site.Params.tagline }}</h3>
                     <div class="fade-in three">{{ partial "social.html" . }}</div>
                     {{ if .Site.Params.email }}
@@ -28,13 +28,13 @@
                 <div class="container">
                     <div class="columns is-fullwidth has-text-centered">
                         <div class="column nav-item">
-                            <a href="#about">About</a>
+                            <a href="#about">about</a>
                         </div>
                         <div class="column nav-item">
-                            <a href="/projects/">Projects</a>
+                            <a href="/projects/">projects</a>
                         </div>
                         <div class="column nav-item">
-                            <a href="/blog/">Blog</a>
+                            <a href="/blog/">blog</a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,8 @@
     <div class="section no-padding fade-in three">
         <div class="section" id="about">
             <div class="container">
-                <h2 class="title is-2 has-text-centered">About</h2>
+                <h2 class="title is-2 has-text-centered">about</h2>
+                <hr>
                 <div class="columns">
                     <div class="column is-one-third has-text-centered"><img class="img-responsive avatar"
                                                                             src="/{{ .Site.Params.avatar }}"
@@ -62,6 +63,8 @@
             </div>
         </div>
     </div>
+   {{partial "skills.html" }}
+   {{partial "experience.html" }}
 </div>
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" }}

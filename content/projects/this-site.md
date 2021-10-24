@@ -1,18 +1,18 @@
 +++
 date = "2017-04-10T18:06:34+05:00"
-title = "This Site"
+title = "this site"
 imagelink = "img/this-site.png"
 source = "https://github.com/belamov/belamov-hugo"
 +++
 
-This site you are browsing now.
+this site you are browsing now.
 
-It is made with [Hugo](https://gohugo.io/) - static site generator.
+it is made with [hugo](https://gohugo.io/) - static site generator.
 
-## Why hugo?
+## why hugo?
 
-The main reason is that sites built with hugo don't need any runtime like PHP or Python. So i can deploy such a site to a Github Pages, for example. No expencies on web hostings and easy deployment.
+the main reason is that sites built with hugo don't need any runtime like php or python. so i can deploy such a site to a github pages, for example. no expencies on web hostings and easy deployment.
 
-The other reason is that hugo is pretty simple to use. 
+the other reason is that hugo is pretty simple to use. 
 
-I didn't make this site from scratch, I used [Vicky Lai](https://vickylai.com)'s theme called [Introduction](https://github.com/vickylaixy/hugo-theme-introduction). But I modified it a bit for my needs, for example I added projects page and a template for every project. By the way this theme uses [Bulma](http://bulma.io/) - a CSS framework based on flexboxes. Pretty interesting, but I personally didn't like it. Bootstrap 4 looks cooler, but it is in beta at the moment.
+i didn't make this site from scratch, i used [vicky lai](https://vickylai.com)'s theme called [introduction](https://github.com/vickylaixy/hugo-theme-introduction). but i modified it a bit for my needs, for example i added projects page and a template for every project. by the way this theme uses [bulma](http://bulma.io/) - a css framework based on flexboxes. pretty interesting, but i personally didn't like it. bootstrap 4 looks cooler, but it is in beta at the moment.

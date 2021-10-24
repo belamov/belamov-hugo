@@ -1,70 +1,70 @@
 +++
 date = "2017-04-11T17:38:52+05:00"
-title = "How I am blogging with Hugo"
+title = "how i am blogging with hugo"
 +++
 
-In case you didn't notice, this blog and all other parts of this site is made by [Hugo](https://gohugo.io).  If you want to know more, [click here]({{< ref "projects/this-site.md" >}}).
+in case you didn't notice, this blog and all other parts of this site is made by [hugo](https://gohugo.io).  if you want to know more, [click here]({{< ref "projects/this-site.md" >}}).
 
-In this article i will describe my posting process.
+in this article i will describe my posting process.
 <!--more-->
-## Writing post
+## writing post
 
-It all starts with creating a post. It is very easy achievable by following comand:
+it all starts with creating a post. it is very easy achievable by following comand:
 
     hugo new blog/<article-name>.md
 
-New file contains this: 
+new file contains this: 
 
     +++
-     date = "2017-04-11T17:38:52+05:00"
+     date = "2017-04-11t17:38:52+05:00"
      title = "<article-name>"  
     +++
     
-That stuff inside triple plusses called Front Matter. I don't want to go deeper in this, this all described very well in [docs](https://gohugo.io/content/front-matter/).
+that stuff inside triple plusses called front matter. i don't want to go deeper in this, this all described very well in [docs](https://gohugo.io/content/front-matter/).
 
-Next thing is to humanize title, add taxonomies or categories, if you are using any (*I am not using taxonomies or categories at the moment, but I will think about it and maby categorize my blogposts in future*)
+next thing is to humanize title, add taxonomies or categories, if you are using any (*i am not using taxonomies or categories at the moment, but i will think about it and maby categorize my blogposts in future*)
 
-The last thing is to write post itself. Hugo uses markdown (*I am not sure if there are other options, but I am totaly happy with markdown*)
+the last thing is to write post itself. hugo uses markdown (*i am not sure if there are other options, but i am totaly happy with markdown*)
 
-## Deployment
+## deployment
 
-Hugo makes it really easy to update your site. 
+hugo makes it really easy to update your site. 
 
-Docs provide you with ready-to-use script which will make all the work for you. I am using Github Pages as my hosting, so my deployment script looks like this:
+docs provide you with ready-to-use script which will make all the work for you. i am using github pages as my hosting, so my deployment script looks like this:
 
 ``` deploy.sh:        
-    echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+    echo -e "\033[0;32mdeploying updates to github...\033[0m"
     
-    # Build the project.
+    # build the project.
     hugo # if using a theme, replace by `hugo -t <yourtheme>`
     
-    # Go To Public folder
+    # go to public folder
     cd public
-    # Add changes to git.
-    git add -A
+    # add changes to git.
+    git add -a
     
-    # Commit changes.
+    # commit changes.
     msg="rebuilding site `date`"
     if [ $# -eq 1 ]
       then msg="$1"
     fi
     git commit -m "$msg"
     
-    # Push source and build repos.
+    # push source and build repos.
     git push origin master
         
-    # Come Back
+    # come back
     cd ..
 ```
 
-Make this file executable and simply run it. I don't even have to type username and password for my Github account, because I am pushing with SHH. That's all!
+make this file executable and simply run it. i don't even have to type username and password for my github account, because i am pushing with shh. that's all!
 
-*Updated:*
+*updated:*
 
-I decided to keep both raw and compiled site in one repo. It is much easier to maintain. 
+i decided to keep both raw and compiled site in one repo. it is much easier to maintain. 
 
-So now deployment is as easy as:
+so now deployment is as easy as:
 
-1. Run ```hugo```. This command compiles your site to clear html
-2. Commit changes and push them to Github
+1. run ```hugo```. this command compiles your site to clear html
+2. commit changes and push them to github
 
