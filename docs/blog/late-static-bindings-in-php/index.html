@@ -14,7 +14,7 @@
     <title>
         
         
-            belamov | Late static bindings in php
+            belamov | late static bindings in php
         
     </title>
     <link rel="canonical" href="/blog/late-static-bindings-in-php/">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1625228008">
+        <link rel="stylesheet" href="/css/style.css?t=1635206148">
         
     
     <link rel="shortcut icon"
@@ -59,31 +59,25 @@
         <div class="container">
             <hr>
 <nav class="nav nav-center">
-    <span id="nav-toggle" class="nav-toggle"
-          onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-left nav-menu">
+  <div id="nav-menu " class="nav-left nav-menu is-active">
       <span class="nav-item">
         <a href="/">Home</a>
       </span>
-        <span class="nav-item">
-        <a href="/#about">About</a> 
+    <span class="nav-item">
+        <a href="/cv">CV</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/projects/">Projects</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/blog/">Blog</a>
       </span>
-    </div>
+  </div>
 </nav>
 <hr>
         </div>
         <div class="container fade-in two">
-            <h2 class="title is-1 top-pad strong-post-title">Late static bindings in php</h2>
+            <h2 class="title is-1 top-pad strong-post-title">late static bindings in php</h2>
             <div class="post-data">
                 Aug 11, 2018 |
                 
@@ -92,56 +86,56 @@
             </div>
         </div>
         <div class="container markdown fade-in two top-pad">
-            <p>So recently I&rsquo;ve been working with one php library. This library is a parser that behave as an event dispatcher.</p>
-<p>Basic usage of it is as follow:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Parser</span>($factory);
-$parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addListener</span>(<span style="color:#e6db74">&#34;EventA&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">HandlerA</span> $handler) {
-    $data <span style="color:#f92672">=</span> $handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getData</span>();
+            <p>so recently i&rsquo;ve been working with one php library. this library is a parser that behave as an event dispatcher.</p>
+<p>basic usage of it is as follow:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">parser</span>($factory);
+$parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addlistener</span>(<span style="color:#e6db74">&#34;eventa&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">handlera</span> $handler) {
+    $data <span style="color:#f92672">=</span> $handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getdata</span>();
 });
 $parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">parse</span>($file);
-</code></pre></div><p>This <code>$factory</code> variable is optional, as library contains its own handlers for any event.</p>
-<p>But however I needed to tweak factory behavior for my needs.</p>
-<p>Library&rsquo;s factory class contained something like this to determinate which handlers are responsible for which event:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Factory</span>
+</code></pre></div><p>this <code>$factory</code> variable is optional, as library contains its own handlers for any event.</p>
+<p>but however i needed to tweak factory behavior for my needs.</p>
+<p>library&rsquo;s factory class contained something like this to determinate which handlers are responsible for which event:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">factory</span>
 {
     <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">static</span> $objects <span style="color:#f92672">=</span> [
-        <span style="color:#e6db74">&#39;EventA&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;HandlerA&#39;</span>,
-        <span style="color:#e6db74">&#39;EventB&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;HandlerB&#39;</span>,
-        <span style="color:#e6db74">&#39;EventC&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;HandlerC&#39;</span>,
+        <span style="color:#e6db74">&#39;eventa&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;handlera&#39;</span>,
+        <span style="color:#e6db74">&#39;eventb&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;handlerb&#39;</span>,
+        <span style="color:#e6db74">&#39;eventc&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;handlerc&#39;</span>,
     ];
     
     <span style="color:#75715e">// other logic 
 </span><span style="color:#75715e"></span>}
-</code></pre></div><p>Let&rsquo;s say that I need to write my own handler for event A. <code>Parser</code> class uses dependency injection to easily switch factory. All internal properties are protected, not private, so it is no problem to just extend this class and override <code>objects</code> variables. I should do it in no time!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyFactory</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Factory</span>
+</code></pre></div><p>let&rsquo;s say that i need to write my own handler for event a. <code>parser</code> class uses dependency injection to easily switch factory. all internal properties are protected, not private, so it is no problem to just extend this class and override <code>objects</code> variables. i should do it in no time!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">myfactory</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">factory</span>
 {
     <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">static</span> $objects <span style="color:#f92672">=</span> [
-        <span style="color:#e6db74">&#39;EventA&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;MyHandlerA&#39;</span>,
-        <span style="color:#e6db74">&#39;EventB&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;HandlerB&#39;</span>,
-        <span style="color:#e6db74">&#39;EventC&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;HandlerC&#39;</span>,
+        <span style="color:#e6db74">&#39;eventa&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;myhandlera&#39;</span>,
+        <span style="color:#e6db74">&#39;eventb&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;handlerb&#39;</span>,
+        <span style="color:#e6db74">&#39;eventc&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;handlerc&#39;</span>,
     ];
 }
 
-$parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Parser</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyFactory</span>());
-$parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addListener</span>(<span style="color:#e6db74">&#34;EventA&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">MyHandlerA</span> $handler) {
-    $data <span style="color:#f92672">=</span> $handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getData</span>();
+$parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">parser</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">myfactory</span>());
+$parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addlistener</span>(<span style="color:#e6db74">&#34;eventa&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">myhandlera</span> $handler) {
+    $data <span style="color:#f92672">=</span> $handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getdata</span>();
 });
 $parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">parse</span>($file);
-</code></pre></div><p>Everything seems right, no errors, no notices, but my tweak doesn&rsquo;t work!. Whenever I handle event A, I still working with it in HandlerA class, not MyHandlerA class.</p>
-<p>What&rsquo;s the problem? Let&rsquo;s look into object creation method in factory (very simplified version):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createHandler</span>($event)
+</code></pre></div><p>everything seems right, no errors, no notices, but my tweak doesn&rsquo;t work!. whenever i handle event a, i still working with it in handlera class, not myhandlera class.</p>
+<p>what&rsquo;s the problem? let&rsquo;s look into object creation method in factory (very simplified version):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createhandler</span>($event)
 {
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span>$objects[$event];
 }
-</code></pre></div><p>Seems right, isn&rsquo;t it? It calls <code>self::$objects</code>, and in my extended class this variable is overridden. But why isn&rsquo;t it working?</p>
-<p>The problem is in difference of early and late static binding in php.</p>
-<p>From <a href="http://php.net/manual/en/language.oop5.late-static-bindings.php">PHP Docs</a>:</p>
+</code></pre></div><p>seems right, isn&rsquo;t it? it calls <code>self::$objects</code>, and in my extended class this variable is overridden. but why isn&rsquo;t it working?</p>
+<p>the problem is in difference of early and late static binding in php.</p>
+<p>from <a href="http://php.net/manual/en/language.oop5.late-static-bindings.php">php docs</a>:</p>
 <blockquote>
-<p>Static references to the current class like self:: are resolved using the class in which the function belongs, as in where it was defined:</p>
+<p>static references to the current class like self:: are resolved using the class in which the function belongs, as in where it was defined:</p>
 </blockquote>
-<p>In other words, it references variable in class that contains this method, not the class that is loaded in runtime.</p>
-<p>Best way to describe how late static binding works is this code (I found it in StackOverflow):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+<p>in other words, it references variable in class that contains this method, not the class that is loaded in runtime.</p>
+<p>best way to describe how late static binding works is this code (i found it in stackoverflow):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">a</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">get_self</span>() {
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">self</span>();
     }
@@ -151,15 +145,15 @@ $parser<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">parse
     }
 }
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">A</span> {}
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">a</span> {}
 
-<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">B</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_self</span>());  <span style="color:#75715e">// A
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">B</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_static</span>()); <span style="color:#75715e">// B
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">A</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_self</span>()); <span style="color:#75715e">// A
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">A</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_static</span>()); <span style="color:#75715e">// A
-</span></code></pre></div><p>So if author of this library used <code>static::$objects[$event]</code> my tweak would have worked and library would become much more extendable.</p>
-<p>I had to copy-paste all of the Factory class to make my tweak work. And whenever this library is updated, I have to redo ths gross thing. Of course, you can fork this library, but then you have to sync your fork to original. None of this methods are pretty in my opinion.</p>
-<p>Hope you knew something new and won&rsquo;t fall into this trap in your own libraries.</p>
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">b</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_self</span>());  <span style="color:#75715e">// a
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">b</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_static</span>()); <span style="color:#75715e">// b
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_self</span>()); <span style="color:#75715e">// a
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_class</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get_static</span>()); <span style="color:#75715e">// a
+</span></code></pre></div><p>so if author of this library used <code>static::$objects[$event]</code> my tweak would have worked and library would become much more extendable.</p>
+<p>i had to copy-paste all of the factory class to make my tweak work. and whenever this library is updated, i have to redo ths gross thing. of course, you can fork this library, but then you have to sync your fork to original. none of this methods are pretty in my opinion.</p>
+<p>hope you knew something new and won&rsquo;t fall into this trap in your own libraries.</p>
 
         </div>
     </div>

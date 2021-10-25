@@ -28,7 +28,7 @@
                 <div class="container">
                     <div class="columns is-fullwidth has-text-centered">
                         <div class="column nav-item">
-                            <a href="#about">about</a>
+                            <a href="/cv">CV</a>
                         </div>
                         <div class="column nav-item">
                             <a href="/projects/">projects</a>
@@ -42,29 +42,6 @@
             </div>
         </div>
     </div>
-    <div class="section no-padding fade-in three">
-        <div class="section" id="about">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered">about</h2>
-                <hr>
-                <div class="columns">
-                    <div class="column is-one-third has-text-centered"><img class="img-responsive avatar"
-                                                                            src="/{{ .Site.Params.avatar }}"
-                                                                            alt="My profile picture.">
-                    </div>
-                    <div class="column markdown">
-                        {{ range .Data.Pages }}
-                            {{if eq .Title "about" }}
-                                {{.Content}}
-                            {{end}}
-                        {{ end }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   {{partial "skills.html" }}
-   {{partial "experience.html" }}
 </div>
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" }}

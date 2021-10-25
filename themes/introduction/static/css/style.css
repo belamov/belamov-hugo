@@ -3698,12 +3698,11 @@ button.button, input[type="submit"].button {
 @media screen and (max-width: 768px) {
     .nav-menu {
         background-color: #fff;
-        box-shadow: 0 4px 7px rgba(10, 10, 10, 0.1);
         left: 0;
         display: none;
         right: 0;
         top: 100%;
-        position: absolute
+        position: relative
     }
 
     .nav-menu .nav-item {
@@ -3712,7 +3711,8 @@ button.button, input[type="submit"].button {
     }
 
     .nav-menu.is-active {
-        display: block
+        display: block;
+        z-index: 1000 !important;
     }
 }
 
@@ -3739,12 +3739,6 @@ button.button, input[type="submit"].button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    overflow: hidden;
-    overflow-x: auto;
-    white-space: nowrap
 }
 
 .nav-center {

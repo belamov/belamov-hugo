@@ -3,7 +3,7 @@ date = "2017-04-11T17:38:52+05:00"
 title = "how i am blogging with hugo"
 +++
 
-in case you didn't notice, this blog and all other parts of this site is made by [hugo](https://gohugo.io).  if you want to know more, [click here]({{< ref "projects/this-site.md" >}}).
+in case you didn't notice, this blog and all other parts of this site is made by [hugo](https://gohugo.io)
 
 in this article i will describe my posting process.
 <!--more-->

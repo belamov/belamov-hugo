@@ -14,7 +14,7 @@
     <title>
         
         
-            belamov | PostgreSQL range types support for Laravel
+            belamov | postgresql range types support for laravel
         
     </title>
     <link rel="canonical" href="/projects/postgres-range/">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1625228008">
+        <link rel="stylesheet" href="/css/style.css?t=1635206148">
         
     
     <link rel="shortcut icon"
@@ -59,31 +59,25 @@
         <div class="container">
             <hr>
 <nav class="nav nav-center">
-    <span id="nav-toggle" class="nav-toggle"
-          onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-left nav-menu">
+  <div id="nav-menu " class="nav-left nav-menu is-active">
       <span class="nav-item">
         <a href="/">Home</a>
       </span>
-        <span class="nav-item">
-        <a href="/#about">About</a> 
+    <span class="nav-item">
+        <a href="/cv">CV</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/projects/">Projects</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/blog/">Blog</a>
       </span>
-    </div>
+  </div>
 </nav>
 <hr>
         </div>
         <div class="container fade-in two">
-            <h1 class="title is-1 strong-post-title">PostgreSQL range types support for Laravel</h1>
+            <h1 class="title is-1 strong-post-title">postgresql range types support for laravel</h1>
             <div class="columns">
                 
                 
@@ -92,21 +86,21 @@
             </div>
             <div class="columns ">
                 <div class="column markdown is-three-quarters">
-                    <p>It&rsquo;s a Laravel package for PosgreSQL range types support</p>
-<p>I discovered this article <a href="https://medium.com/@palypster/ranges-in-laravel-7-using-postgresql-c4bc69b91758">Date Ranges in Laravel</a> by <a href="https://github.com/palypster">Pavol Perdík</a>
-and approaches described there could really help me out in my <a href="/projects/rehearsals-booking/">Rehearsals booking project</a>.
-They really simplify a lot of queries for managing rehearsal time and prices' intervals.</p>
-<p>I implemented them inside my project and was very happy with results,
-so I decided to extract that implementation into package
-(also added support for other range types, though I didn&rsquo;t use them).</p>
-<p>During the creation I dug deep into how Laravel manages migrations,
+                    <p>it&rsquo;s a laravel package for posgresql range types support</p>
+<p>i discovered this article <a href="https://medium.com/@palypster/ranges-in-laravel-7-using-postgresql-c4bc69b91758">date ranges in laravel</a> by <a href="https://github.com/palypster">pavol perdík</a>
+and approaches described there could really help me out in my <a href="/projects/rehearsals-booking/">rehearsals booking project</a>.
+they really simplify a lot of queries for managing rehearsal time and prices' intervals.</p>
+<p>i implemented them inside my project and was very happy with results,
+so i decided to extract that implementation into package
+(also added support for other range types, though i didn&rsquo;t use them).</p>
+<p>during the creation i dug deep into how laravel manages migrations,
 and creates fields in database, that was a lot of fun!
-Also I finally got acquainted with Github Actions and CI,
+also i finally got acquainted with github actions and ci,
 this project was perfect candidate to try them out on.</p>
-<p>I continued to stream my work, so if you are interested in watching
-my struggles, <a href="https://www.youtube.com/playlist?list=PL2znuYuctNg_o5Wg6tbRHfS0CAft0AKCk">there is a playlist</a>
+<p>i continued to stream my work, so if you are interested in watching
+my struggles, <a href="https://www.youtube.com/playlist?list=pl2znuyuctng_o5wg6tbrhfs0caft0akck">there is a playlist</a>
 with livecoding of this package from scratch.</p>
-<p>Source code and documentation are available at <a href="https://github.com/belamov/postgres-range">github</a></p>
+<p>source code and documentation are available at <a href="https://github.com/belamov/postgres-range">github</a></p>
 
                 </div>
                 <div class="colums is-one-quarter">

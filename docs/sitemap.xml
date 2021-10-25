@@ -43,11 +43,6 @@
   </url>
   
   <url>
-    <loc>/projects/epub-parser/</loc>
-    <lastmod>2018-08-01T10:25:16+05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/projects/laravel-rabbit-mq-listener/</loc>
     <lastmod>2018-08-01T10:25:16+05:00</lastmod>
   </url>
@@ -68,13 +63,12 @@
   </url>
   
   <url>
-    <loc>/projects/this-site/</loc>
-    <lastmod>2017-04-10T18:06:34+05:00</lastmod>
+    <loc>/about/</loc>
+    <lastmod>2017-03-09T13:19:25+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2017-03-09T13:19:25+08:00</lastmod>
+    <loc>/cv/</loc>
   </url>
   
   <url>

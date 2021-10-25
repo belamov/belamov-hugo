@@ -14,7 +14,7 @@
     <title>
         
         
-            belamov | How I am blogging with Hugo
+            belamov | how i am blogging with hugo
         
     </title>
     <link rel="canonical" href="/blog/how-i-am-blogging-with-hugo/">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1625228008">
+        <link rel="stylesheet" href="/css/style.css?t=1635206148">
         
     
     <link rel="shortcut icon"
@@ -59,31 +59,25 @@
         <div class="container">
             <hr>
 <nav class="nav nav-center">
-    <span id="nav-toggle" class="nav-toggle"
-          onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-left nav-menu">
+  <div id="nav-menu " class="nav-left nav-menu is-active">
       <span class="nav-item">
         <a href="/">Home</a>
       </span>
-        <span class="nav-item">
-        <a href="/#about">About</a> 
+    <span class="nav-item">
+        <a href="/cv">CV</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/projects/">Projects</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/blog/">Blog</a>
       </span>
-    </div>
+  </div>
 </nav>
 <hr>
         </div>
         <div class="container fade-in two">
-            <h2 class="title is-1 top-pad strong-post-title">How I am blogging with Hugo</h2>
+            <h2 class="title is-1 top-pad strong-post-title">how i am blogging with hugo</h2>
             <div class="post-data">
                 Apr 11, 2017 |
                 
@@ -92,53 +86,53 @@
             </div>
         </div>
         <div class="container markdown fade-in two top-pad">
-            <p>In case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">Hugo</a>.  If you want to know more, <a href="/projects/this-site/">click here</a>.</p>
-<p>In this article i will describe my posting process.</p>
-<h2 id="writing-post">Writing post</h2>
-<p>It all starts with creating a post. It is very easy achievable by following comand:</p>
+            <p>in case you didn&rsquo;t notice, this blog and all other parts of this site is made by <a href="https://gohugo.io">hugo</a></p>
+<p>in this article i will describe my posting process.</p>
+<h2 id="writing-post">writing post</h2>
+<p>it all starts with creating a post. it is very easy achievable by following comand:</p>
 <pre><code>hugo new blog/&lt;article-name&gt;.md
 </code></pre>
-<p>New file contains this:</p>
+<p>new file contains this:</p>
 <pre><code>+++
- date = &quot;2017-04-11T17:38:52+05:00&quot;
+ date = &quot;2017-04-11t17:38:52+05:00&quot;
  title = &quot;&lt;article-name&gt;&quot;  
 +++
 </code></pre>
-<p>That stuff inside triple plusses called Front Matter. I don&rsquo;t want to go deeper in this, this all described very well in <a href="https://gohugo.io/content/front-matter/">docs</a>.</p>
-<p>Next thing is to humanize title, add taxonomies or categories, if you are using any (<em>I am not using taxonomies or categories at the moment, but I will think about it and maby categorize my blogposts in future</em>)</p>
-<p>The last thing is to write post itself. Hugo uses markdown (<em>I am not sure if there are other options, but I am totaly happy with markdown</em>)</p>
-<h2 id="deployment">Deployment</h2>
-<p>Hugo makes it really easy to update your site.</p>
-<p>Docs provide you with ready-to-use script which will make all the work for you. I am using Github Pages as my hosting, so my deployment script looks like this:</p>
-<pre><code class="language-deploy.sh:" data-lang="deploy.sh:">    echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+<p>that stuff inside triple plusses called front matter. i don&rsquo;t want to go deeper in this, this all described very well in <a href="https://gohugo.io/content/front-matter/">docs</a>.</p>
+<p>next thing is to humanize title, add taxonomies or categories, if you are using any (<em>i am not using taxonomies or categories at the moment, but i will think about it and maby categorize my blogposts in future</em>)</p>
+<p>the last thing is to write post itself. hugo uses markdown (<em>i am not sure if there are other options, but i am totaly happy with markdown</em>)</p>
+<h2 id="deployment">deployment</h2>
+<p>hugo makes it really easy to update your site.</p>
+<p>docs provide you with ready-to-use script which will make all the work for you. i am using github pages as my hosting, so my deployment script looks like this:</p>
+<pre><code class="language-deploy.sh:" data-lang="deploy.sh:">    echo -e &quot;\033[0;32mdeploying updates to github...\033[0m&quot;
     
-    # Build the project.
+    # build the project.
     hugo # if using a theme, replace by `hugo -t &lt;yourtheme&gt;`
     
-    # Go To Public folder
+    # go to public folder
     cd public
-    # Add changes to git.
-    git add -A
+    # add changes to git.
+    git add -a
     
-    # Commit changes.
+    # commit changes.
     msg=&quot;rebuilding site `date`&quot;
     if [ $# -eq 1 ]
       then msg=&quot;$1&quot;
     fi
     git commit -m &quot;$msg&quot;
     
-    # Push source and build repos.
+    # push source and build repos.
     git push origin master
         
-    # Come Back
+    # come back
     cd ..
-</code></pre><p>Make this file executable and simply run it. I don&rsquo;t even have to type username and password for my Github account, because I am pushing with SHH. That&rsquo;s all!</p>
-<p><em>Updated:</em></p>
-<p>I decided to keep both raw and compiled site in one repo. It is much easier to maintain.</p>
-<p>So now deployment is as easy as:</p>
+</code></pre><p>make this file executable and simply run it. i don&rsquo;t even have to type username and password for my github account, because i am pushing with shh. that&rsquo;s all!</p>
+<p><em>updated:</em></p>
+<p>i decided to keep both raw and compiled site in one repo. it is much easier to maintain.</p>
+<p>so now deployment is as easy as:</p>
 <ol>
-<li>Run <code>hugo</code>. This command compiles your site to clear html</li>
-<li>Commit changes and push them to Github</li>
+<li>run <code>hugo</code>. this command compiles your site to clear html</li>
+<li>commit changes and push them to github</li>
 </ol>
         </div>
     </div>

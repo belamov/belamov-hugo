@@ -14,7 +14,7 @@
     <title>
         
         
-            belamov | Laravel Package - RabbitMQ listener
+            belamov | laravel package - rabbitmq listener
         
     </title>
     <link rel="canonical" href="/projects/laravel-rabbit-mq-listener/">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
     
         
-        <link rel="stylesheet" href="/css/style.css?t=1625228008">
+        <link rel="stylesheet" href="/css/style.css?t=1635206148">
         
     
     <link rel="shortcut icon"
@@ -59,31 +59,25 @@
         <div class="container">
             <hr>
 <nav class="nav nav-center">
-    <span id="nav-toggle" class="nav-toggle"
-          onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-left nav-menu">
+  <div id="nav-menu " class="nav-left nav-menu is-active">
       <span class="nav-item">
         <a href="/">Home</a>
       </span>
-        <span class="nav-item">
-        <a href="/#about">About</a> 
+    <span class="nav-item">
+        <a href="/cv">CV</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/projects/">Projects</a>
       </span>
-        <span class="nav-item">
+    <span class="nav-item">
         <a href="/blog/">Blog</a>
       </span>
-    </div>
+  </div>
 </nav>
 <hr>
         </div>
         <div class="container fade-in two">
-            <h1 class="title is-1 strong-post-title">Laravel Package - RabbitMQ listener</h1>
+            <h1 class="title is-1 strong-post-title">laravel package - rabbitmq listener</h1>
             <div class="columns">
                 
                 
@@ -92,11 +86,11 @@
             </div>
             <div class="columns ">
                 <div class="column markdown is-three-quarters">
-                    <p>This is a package for Laravel framework.</p>
-<p>It allows you to listen to RabbitMQ events.</p>
-<p>Don&rsquo;t be confused, It&rsquo;s functionality has nothing to do with queues. My coworker was using RabbitMQ as a synchroniser between main server and another web service. Main server generates various events like updating an image or adding a row in database. We got new project written with Laravel that needed to sync via that RabbitMQ bus. I haven&rsquo;t found any package that would solve my problem, so I wrote my own. Now two new projects use this package. Might be useful for somebody too.</p>
-<p>I tried to make it as general as possible, so you should implement some abstract classes and add some handler classes, because I can&rsquo;t predict the format of events from RabbitMQ</p>
-<p>Throughout instructions could be found in <a href="https://github.com/belamov/laravel-rabbitmq-listener/blob/master/README.md">readme</a>.</p>
+                    <p>this is a package for laravel framework.</p>
+<p>it allows you to listen to rabbitmq events.</p>
+<p>don&rsquo;t be confused, it&rsquo;s functionality has nothing to do with queues. my coworker was using rabbitmq as a synchroniser between main server and another web service. main server generates various events like updating an image or adding a row in database. we got new project written with laravel that needed to sync via that rabbitmq bus. i haven&rsquo;t found any package that would solve my problem, so i wrote my own. now two new projects use this package. might be useful for somebody too.</p>
+<p>i tried to make it as general as possible, so you should implement some abstract classes and add some handler classes, because i can&rsquo;t predict the format of events from rabbitmq</p>
+<p>throughout instructions could be found in <a href="https://github.com/belamov/laravel-rabbitmq-listener/blob/master/readme.md">readme</a>.</p>
 
                 </div>
                 <div class="colums is-one-quarter">
