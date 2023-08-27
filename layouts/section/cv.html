@@ -1,318 +1,259 @@
 {{ partial "header.html" . }}
 <div class="wrapper">
-  <div class="section">
-    <div class="section" id="top">
-      <div class="container hero fade-in one">
-        <h1 class="bold-title is-1">my cv</h1>
-      </div>
-      <div class="section no-padding fade-in two">
+    <div class="section">
+        <div class="section" id="top">
+            <div class="container hero fade-in one">
+                <h1 class="bold-title is-1">my cv</h1>
+            </div>
+            <div class="section no-padding fade-in two">
+                <div class="container">
+                    {{ partial "nav-list.html" . }}
+                </div>
+            </div>
+        </div>
         <div class="container">
-          {{ partial "nav-list.html" . }}
+            <div class="section no-padding fade-in three">
+                <h2 class="title is-2 has-text-centered">about</h2>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-third has-text-centered"><img class="img-responsive avatar"
+                                                                            src="/{{ .Site.Params.avatar }}"
+                                                                            alt="My profile picture.">
+                    </div>
+                    <div class="column markdown">
+                        {{.Content}}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        {{partial "skills.html" }}
+
+        <div class="container">
+            <div class="section no-padding fade-in three">
+                <hr>
+                <h2 class="title is-2 has-text-centered">experience</h2>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-quarter cv-dates">
+                        november 2021 - present <br>
+                    </div>
+                    <div class="column is-three-quarters">
+                        <div class="cv-company-title">
+                            growfood
+                        </div>
+                        <div class="cv-company-site">
+                            <a href="https://growfood.pro" target="_blank">https://growfood.pro</a>
+                        </div>
+                        <div class="cv-company-experience">
+                            <div class="markdown">
+                                Logistics Team (5 Full Stack Developers)
+                                <ul>
+                                    <li>Developed functionality for selling warehouse stocks, reducing expenses due to
+                                        forecast inaccuracies.
+                                    </li>
+                                    <li>Created a process for managing incidents during packaging, increasing customer
+                                        loyalty and packaging process monitoring.
+                                    </li>
+                                    <li>Implemented part of the packages labeling functionality, enabling the
+                                        introduction of new warehouse processes
+                                    </li>
+                                    <li>Developed integration functionality with partners, where our company acted as a
+                                        logistics provider.
+                                        <ul>
+                                            <li>Enabled communication between couriers and managers through an internal
+                                                communication system, automating integrations between companies without
+                                                changes to courier processes.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Handled various tasks supporting and improving warehouse processes</li>
+                                </ul>
+                            </div>
+                            <div class="cv-subtitle">applied skills:</div>
+                            <p>
+                                php, laravel, vue.js, postgreSQL, javascript, git, phpUnit, OOP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-quarter cv-dates">
+                        march 2021 - november 2021 <br>
+                        (9 months)
+                    </div>
+                    <div class="column is-three-quarters">
+                        <div class="cv-company-title">
+                            rusatom smart utilities
+                        </div>
+                        <div class="cv-company-site">
+                            <a href="https://www.rusatom-utilities.ru"
+                               target="_blank">https://www.rusatom-utilities.ru</a>
+                        </div>
+                        <div class="cv-company-experience">
+                            <div class="cv-subtitle">responsibilities and achievements</div>
+                            <div class="markdown">
+                                <ul>
+                                    <li>Managed backend and frontend development for an educational integrator
+                                        <ul>
+                                            <li>Created features for employer, vacancy, and application management</li>
+                                            <li>Implemented resume generation in PDF format from user data</li>
+                                            <li>Designed and implemented a full-text search using Elasticsearch with
+                                                ranking and language processing (typos, synonyms).
+                                            </li>
+                                            <li>Developed employer profiles and accounts</li>
+                                        </ul>
+                                    </li>
+                                    <li>Worked on backend development for regional portals, integrating with national
+                                        and regional project management systems
+                                        <ul>
+                                            <li>Integrated three systems (our portal, data bus, data source),
+                                                identifying and resolving issues in the data source.
+                                            </li>
+                                            <li>Took ownership of data bus enhancements to improve speed and reduce
+                                                dependency on other teams
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="cv-subtitle">applied skills:</div>
+                            <p>
+                                php, laravel, javascript, vuejs, postgresql, elasticsearch, git, docker, composer,
+                                phpunit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-quarter cv-dates">
+                        october 2020 - february 2021 <br>
+                        (5 months)
+                    </div>
+                    <div class="column is-three-quarters">
+                        <div class="cv-company-title">glorax infotech</div>
+                        <div class="cv-company-site">
+                            <a href="https://glorax.io/en/" target="_blank">https://glorax.io/en/</a>
+                        </div>
+                        <div class="cv-company-experience">
+                            <div class="cv-subtitle">responsibilities and achievements:</div>
+                            <div class="markdown">
+                                <p>Developed backend for a real estate auction startup</p>
+                                <p>Startup Team (2 Backend Developers, 2 Frontend Developers)</p>
+                                <ul>
+                                    <li>Architected processes for application requests using the finite state machine
+                                        pattern, achieving flexibility, resilience, and low code coupling
+                                    </li>
+                                    <li>Implemented a flexible notification system using email, SMS, and websockets
+                                        primarily with Laravel tools
+                                    </li>
+                                    <li>Integrated with marketing and partner services, ensuring thorough logging for
+                                        prompt issue identification and extensive API testing.
+                                    </li>
+                                    <li>Ensured comprehensive test coverage, enabling confident deployments after
+                                        successful Bitbucket pipeline execution (including static code analysis).
+                                    </li>
+                                    <li>Decomposed high-level business requirements into specific development tasks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cv-subtitle">applied skills:</div>
+                        <p>
+                            php, laravel, postgresql, phpunit, websockets, docker
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-quarter cv-dates">
+                        february 2019 - october 2020 <br>
+                        (1 year, 9 months)
+                    </div>
+                    <div class="column is-three-quarters">
+                        <div class="cv-company-title">gradient</div>
+                        <div class="cv-company-site">
+                            <a href="https://gradientpro.ru/" target="_blank">https://gradientpro.ru/</a>
+                        </div>
+                        <div class="cv-company-experience">
+                            <div class="cv-subtitle">responsibilities and achievements:</div>
+                            <div class="markdown">
+                                <p>
+                                    Developed internal company projects
+                                </p>
+                                <p>
+                                    Utilized Laravel for backend (API) development and Vue.js with Vuetify for frontend (SPA) development across all projects.
+                                </p>
+                                <ul>
+                                    <li>Created an organizer application for employees attending exhibitions.
+                                        The application included features such as a meeting calendar, management of exhibition samples,
+                                        checklist management for booth visits, flexible supplier filtering, and data export to Excel/PowerPoint.</li>
+                                    <li>Developed a website with a library-like functionality for booking samples. Implemented two-way synchronization with the main data bus.</li>
+                                    <li>Created an application to visualize production processes, acting as a wrapper over BPMN processes. Tasks were automatically exported to a task manager. Camunda was used to manage BPMN processes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cv-subtitle">applied skills:</div>
+                        <p>
+                            php, laravel, javascript, vue.js, vuetify, postgresql, mysql, docker
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-quarter cv-dates">
+                        august 2018 - january 2019 <br>
+                        (6 months)
+                    </div>
+                    <div class="column is-three-quarters">
+                        <div class="cv-company-title">gor</div>
+                        <div class="cv-company-experience">
+                            <div class="cv-subtitle">responsibilities and achievements:</div>
+                            <div class="markdown">
+                                <ul>
+                                    <li>Collaborated with a small team to develop multiplayer online games</li>
+                                    <li>Developed three games for a client, each with distinct gameplay mechanics</li>
+                                    <li>Utilized PHP, Laravel, MySQL, Redis for one game and Node.js, MongoDB, PostgreSQL, RabbitMQ, Redis for the other two games</li>
+                                    <li>Designed and implemented bots with unique behavior patterns.</li>
+                                    <li>Created a Vue.js frontend for testing and responsiveness.</li>
+                                    <li>Implemented an admin panel using Laravel Nova that interacted with the APIs and sockets</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="cv-subtitle">applied skills:</div>
+                        <p>
+                            php, laravel, mysql, nodejs, mongodb, javascript, vuejs, docker, redis, rabbitmq
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="columns">
+                    <div class="column is-one-quarter cv-dates">
+                        may 2017 - august 2018 <br>
+                        (1 year 4 months)
+                    </div>
+                    <div class="column is-three-quarters">
+                        <div class="cv-company-title">begining of career</div>
+                        <div class="cv-company-experience">
+                            <div class="markdown">
+                                <ul>
+                                    <li>Gained experience through various companies, learned the profession, and familiarized myself with the industry.</li>
+                                    <li>Worked on multiple Bitrix projects</li>
+                                    <li>Developed proficiency in Laravel</li>
+                                    <li>Participated in studio-style development of various projects</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cv-subtitle">applied skills:</div>
+                        <p>
+                            bitrix, laravel, php, javascript, html, css, git, oop
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container">
-      <div class="section no-padding fade-in three">
-        <h2 class="title is-2 has-text-centered">about</h2>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-third has-text-centered"><img class="img-responsive avatar"
-                                                                  src="/{{ .Site.Params.avatar }}"
-                                                                  alt="My profile picture.">
-          </div>
-          <div class="column markdown">
-            {{.Content}}
-          </div>
-        </div>
-      </div>
-    </div>
-    {{partial "skills.html" }}
-
-    <div class="container">
-      <div class="section no-padding fade-in three">
-        <hr>
-        <h2 class="title is-2 has-text-centered">experience</h2>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-quarter cv-dates">
-            november 2021 - present <br>
-          </div>
-          <div class="column is-three-quarters">
-            <div class="cv-company-title">
-              growfood
-            </div>
-            <div class="cv-company-site">
-              <a href="https://growfood.pro" target="_blank">https://growfood.pro</a>
-            </div>
-            <div class="cv-company-experience">
-              <div class="markdown">
-                TBD...
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-quarter cv-dates">
-            march 2021 - november 2021 <br>
-            (9 months)
-          </div>
-          <div class="column is-three-quarters">
-            <div class="cv-company-title">
-              rusatom smart utilities
-            </div>
-            <div class="cv-company-site">
-              <a href="https://www.rusatom-utilities.ru" target="_blank">https://www.rusatom-utilities.ru</a>
-            </div>
-            <div class="cv-company-experience">
-              <div class="cv-subtitle">responsibilities and achievements</div>
-              <div class="markdown">
-                worked on two projects:
-                <ul>
-
-                  <li>
-                    <div>
-                      integration platform of educational opportunities - aggregation of universities,
-                      curricula, employers, vacancies, selections for students. developed a lot of functionality
-                      on my own, for example, everything related to employers, vacancies, appliances, cv generation
-                      from user data, full-text search with ranking and language processing (typos, synonyms),
-                      filtering institutions and curricula, employer's admin panel and more. Worked on both
-                      frontend and backend. lately been working as single developer on a project.
-                    </div>
-                    <br>
-                    <div>
-                      this project was frozen several times (due to problems with sales) and I did not catch its
-                      official launch
-                    </div>
-                  </li>
-                  <br>
-                  <li>
-                    <div>
-                      backend for the portals for citizens of the Murmansk and Sakhalin regions. the largest and
-                      most complex challenge was the development of integration with goverment systems for managing
-                      national and regional projects. three systems were connected (our portal, data bus, data source).
-                    </div>
-                    <br>
-                    <div> thanks to the integration, several problems in the data source were found and fixed.</div>
-                    <br>
-                    <div>
-                      the most difficult was the organizational component, work in the absence of sufficient
-                      documentation. the requirements of our system were made for a long time, so over time I took over
-                      the development of the data bus to speed up the process and less dependence on other teams
-                    </div>
-                  </li>
-                </ul>
-                <div class="cv-subtitle">why i left:</div>
-                <p>
-                  i didn’t like the development processes and projects themselves, i wanted more product and business
-                  driven development
-                </p>
-              </div>
-              <div class="cv-subtitle">applied skills:</div>
-              <p>
-                php, laravel, javascript, vuejs, postgresql, elasticsearch, git, docker, composer
-              </p>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-quarter cv-dates">
-            october 2020 - february 2021 <br>
-            (5 months)
-          </div>
-          <div class="column is-three-quarters">
-            <div class="cv-company-title">glorax infotech</div>
-            <div class="cv-company-site">
-              <a href="https://glorax.io/en/" target="_blank">https://glorax.io/en/</a>
-            </div>
-            <div class="cv-company-experience">
-              <div class="cv-subtitle">responsibilities and achievements:</div>
-              <div class="markdown">
-                <p> development of backend for real estate startup</p>
-                <p> main achievments:</p>
-                <ul>
-                  <li>
-                    development of architecture design for user's applications - based on state pattern and state
-                    machines.
-                    it worked out nicely, very flexible and reliable, any changes in business requirements where easy
-                    to implement, developed nice high level abstraction and good classes hierarchy, achieved low
-                    cohesion
-                    in code
-                  </li>
-                  <li>
-                    flexible notification system - via email, text messages and websockets, mostly with laravel
-                  </li>
-                  <li>
-                    integration with third-party services and partners - development in production environment,
-                    with priced api calls, meticulous testing with full mocking of external api and thorough logging
-                  </li>
-                  <li>
-                    test-coverage of backend to the level when we can deploy any time if tests in ci are passing and
-                    not worrying about breaking anything (also implemented static analysis in ci/cd pipelines)
-                  </li>
-                  <li>
-                    developed rapid system for working with any resources, following DRY principles
-                  </li>
-                  <li>
-                    decomposition of features from business, managing tasks for development
-                  </li>
-                </ul>
-                <div class="cv-subtitle">why i left:</div>
-                <p>
-                  main investors decided to terminate project, so our team was disbanded
-                </p>
-              </div>
-            </div>
-            <div class="cv-subtitle">applied skills:</div>
-            <p>
-              php, laravel, postgresql, phpunit, websockets, docker
-            </p>
-          </div>
-        </div>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-quarter cv-dates">
-            february 2019 - october 2020 <br>
-            (1 year, 9 months)
-          </div>
-          <div class="column is-three-quarters">
-            <div class="cv-company-title">gradient</div>
-            <div class="cv-company-site">
-              <a href="https://gradientpro.ru/" target="_blank">https://gradientpro.ru/</a>
-            </div>
-            <div class="cv-company-experience">
-              <div class="cv-subtitle">responsibilities and achievements:</div>
-              <div class="markdown">
-                <p>development of internal projects for company</p>
-
-                <p>
-                  completed several projects for autonomization of various business processes
-                  and for simplification of data management
-                </p>
-
-                <p>main achievements:</p>
-                <ul>
-                  <li>
-                    app for employers who visit a lot of exhibitions. its main features: calendar for meetings, managing
-                    samples from exhibitions,
-                    checklists for visiting stands, managing suppliers, exporting data into word and excel
-                  </li>
-                  <li>
-                    website for booking of samples from warehouses, something like library, two-way syncing with main
-                    data
-                    bus
-                  </li>
-                  <li>
-                    app for visualisation of manufacturing processes, obvious abstraction over bpm notation for people
-                    who doesn't know anything about bpmn - automatic tasks assigning, syncing with task managers. bpmn
-                    was
-                    handled by camunda
-                  </li>
-                </ul>
-                <p>
-                  after three month of work i became single developer in division, so i was responsible for every
-                  app i was making - full development cycle, i was successfully handling ops, frontend, backend and
-                  communication with business
-                </p>
-
-
-                <div class="cv-subtitle">why i left:</div>
-                <p>
-                  i was tired of working alone, i wanted to join strong developers team,
-                  also i was concerned about my career and salary level
-                </p>
-              </div>
-            </div>
-            <div class="cv-subtitle">applied skills:</div>
-            <p>
-              php, laravel, javascript, vue.js, vuetify, postgresql, mysql, docker
-            </p>
-          </div>
-        </div>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-quarter cv-dates">
-            august 2018 - january 2019 <br>
-            (6 months)
-          </div>
-          <div class="column is-three-quarters">
-            <div class="cv-company-title">gor</div>
-            <div class="cv-company-experience">
-              <div class="cv-subtitle">responsibilities and achievements:</div>
-              <div class="markdown">
-                <p> backend development for online multiplayer gambling games</p>
-                <p>
-                  one game was developed with php+laravel+mysql+redis,
-                  two more games were developed with nodejs+mongo/postgres+rabbitmq+redis. also last game was developed
-                  with help
-                  of nodejs microservices framework "molecular"
-                </p>
-
-                <p>
-                  for each game where developed bots with different personality traits
-                </p>
-
-                <p>
-                  developed simple frontend with vuejs for testing out one of the games
-                </p>
-
-                <p>
-                  developed admin panel with laravel nova, but all data came through api/websockets, so it was
-                  more vuejs spa with nova interface
-                </p>
-
-                <p>
-                  developed ci/cd system with pipelines on top of gitlab: testing in docker with jest, building
-                  containers
-                  for production, pulling built containers from servers and reloading app, saving game state
-                </p>
-
-
-                <div class="cv-subtitle">why i left:</div>
-                <p>
-                  company decided to terminate development of new games, so my service were no longer needed
-                </p>
-              </div>
-            </div>
-            <div class="cv-subtitle">applied skills:</div>
-            <p>
-              php, laravel, mysql, nodejs, mongodb, javascript, vuejs, docker, redis, rabbitmq
-            </p>
-          </div>
-        </div>
-        <hr>
-        <div class="columns">
-          <div class="column is-one-quarter cv-dates">
-            may 2017 - august 2018 <br>
-            (1 year 4 months)
-          </div>
-          <div class="column is-three-quarters">
-            <div class="cv-company-title">begining of career</div>
-            <div class="cv-company-experience">
-              <div class="markdown">
-                <p>
-                  The beginning of a career, worked in various companies, studied and mastered the profession,
-                  gained experience, got acquainted with the industry.
-                </p>
-                <p>
-                  Most of my projects where using Bitrix, but I already started to master Laravel.
-                  A lot of studio development of various projects, but nothing to be proud of now
-                </p>
-                <p>
-                  During this period, i worked in these companies: Portal Info, CREATIVE, Andrey LLC
-                </p>
-              </div>
-            </div>
-            <div class="cv-subtitle">applied skills:</div>
-            <p>
-              bitrix, laravel, php, javascript, html, css, git, oop
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" }}
